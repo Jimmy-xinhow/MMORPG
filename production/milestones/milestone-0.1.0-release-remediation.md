@@ -189,6 +189,7 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Store/legal/distribution checklist | Review | `production/releases/store-legal-distribution-checklist-0.1.0.md` |
 | Remote CI evidence | Pass / review | `production/qa/evidence/ci-evidence-release-remediation-001.md` |
 | Build provenance | Source/CI pass; clean RC not ready | `production/releases/build-provenance-v0.1.0-rc.2.md` |
+| Clean RC decision package | Ready for owner review | `production/releases/clean-rc-decision-package-0.1.0.md` |
 | RC smoke standard | Defined / review | `production/qa/release-candidate-smoke-standard-0.1.0.md` |
 | Playtest templates | Defined / review | `production/playtests/RR-012-template-index.md` |
 | Patch notes/changelog requirements | Defined / review | `production/releases/patch-notes-changelog-requirements-0.1.0.md` |
@@ -222,7 +223,7 @@ Rationale:
 | 4 | Get QA Lead and Creative Director review for RR-012 playtest templates. | QA Lead + Creative Director | Next owner review |
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
 | 6 | Run real soak/performance/memory execution. | QA Lead + Performance Analyst | Before release gate re-run |
-| 7 | Resolve Godot version, artifact naming, and archive target so a clean RC package can be produced. | Technical Director + Release Manager | Before RC smoke |
+| 7 | Review and approve the clean RC decision package: Godot version, artifact naming, archive target, and `.gitignore` policy. | Technical Director + Release Manager + Producer | Before RC smoke |
 | 8 | Update or supersede release checklist with current remediation state. | Release Manager | Before next gate re-run |
 
 ---

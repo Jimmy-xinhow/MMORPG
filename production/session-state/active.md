@@ -447,3 +447,16 @@
 - Gate verdict: FAIL for clean Release; internal Windows test remains GO WITH WARNINGS.
 - Milestone and sprint status updated to point to the new provenance and gate-check evidence.
 - Next recommended: resolve ADR-0002 and final artifact naming/storage before producing the first clean RC package and running RC smoke.
+
+## Session Extract - Clean RC decision package 2026-05-28
+- Workflow: CCGS architecture-decision plus release-checklist/gate-check adaptation.
+- Artifact created: `production/releases/clean-rc-decision-package-0.1.0.md`.
+- Scope: owner decisions required before clean RC package work can begin.
+- Recommended decision set:
+  - Accept ADR-0002 and require Godot 4.4 for clean RC validation.
+  - Use `勇者傳說 Brave Legend` as product/display name and `BraveLegend` as Windows executable stem.
+  - Store clean RC packages as GitHub Release attachments, not committed build outputs.
+  - Add generated output ignores for `godot-client/.godot/`, `**/__pycache__/`, `build/windows/`, `build/internal-test/`, and `release-archives/` after approval.
+- No source code, ADR status, `.gitignore`, build artifacts, or release tags were changed in this step.
+- Sprint status updated: RR-003 and RR-004 now point to the decision package and await owner selection/sign-off.
+- Next recommended: owner selects/approves decisions, then implement naming/.gitignore/accepted-version changes and produce the first clean RC package.
