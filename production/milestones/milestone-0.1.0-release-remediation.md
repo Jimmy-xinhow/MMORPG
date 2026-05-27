@@ -34,7 +34,7 @@ The current store/legal checklist keeps public PC, Steam, Apple App Store, and G
 | --- | --- | --- |
 | G1 Source provenance clarity | Decide how source, branch, tag, and build provenance will be captured. | `production/releases/source-control-provenance-0.1.0.md` plus RR-001 owner decision. |
 | G2 CI evidence path | Convert local CI config into remote GitHub Actions evidence after source control exists. | `production/qa/evidence/ci-evidence-2026-05-27.md` or successor with remote run URL. |
-| G3 Version and artifact policy | Resolve Godot release version strategy and artifact archival/checksum rules. | ADR-0002, artifact policy, future build provenance record. |
+| G3 Version and artifact policy | Resolve Godot release version strategy and artifact archival/checksum rules. | ADR-0002, artifact policy, `production/releases/build-provenance-v0.1.0-rc.2.md`. |
 | G4 QA evidence readiness | Keep local gate green and define missing performance, soak, RC smoke, and playtest evidence. | QA plan, soak protocol, smoke standard, playtest templates. |
 | G5 Localization readiness boundary | Document why clean localization is blocked and what minimum path clears it. | `production/localization/localization-gap-report-2026-05-27.md`. |
 | G6 Operations readiness boundary | Document crash reporting, rollback, hotfix, support/on-call, known issues, and day-one communication flow. | `production/releases/launch-operations-package-0.1.0.md`. |
@@ -85,7 +85,7 @@ The current store/legal checklist keeps public PC, Steam, Apple App Store, and G
 | ID | Task | Current Status | Milestone Role |
 | --- | --- | --- | --- |
 | RR-001 | Establish source-control provenance plan | Review | Required decision artifact. |
-| RR-002 | Capture remote CI evidence path | Ready | Required remote evidence task after RR-001. |
+| RR-002 | Capture remote CI evidence path | Review | Remote CI evidence is captured; QA Lead sign-off remains. |
 | RR-003 | Resolve Godot version strategy | Review | Required technical release decision. |
 | RR-004 | Define release artifact policy | Review | Required artifact/archive/checksum policy. |
 | RR-005 | Create release QA plan for remediation evidence | Review | QA plan artifact exists and sprint status metadata is reconciled; awaiting QA Lead sign-off. |
@@ -187,10 +187,12 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Localization gap report | Review | `production/localization/localization-gap-report-2026-05-27.md` |
 | Launch operations package | Review | `production/releases/launch-operations-package-0.1.0.md` |
 | Store/legal/distribution checklist | Review | `production/releases/store-legal-distribution-checklist-0.1.0.md` |
-| Remote CI evidence | Missing | Pending RR-002 |
+| Remote CI evidence | Pass / review | `production/qa/evidence/ci-evidence-release-remediation-001.md` |
+| Build provenance | Source/CI pass; clean RC not ready | `production/releases/build-provenance-v0.1.0-rc.2.md` |
 | RC smoke standard | Defined / review | `production/qa/release-candidate-smoke-standard-0.1.0.md` |
 | Playtest templates | Defined / review | `production/playtests/RR-012-template-index.md` |
 | Patch notes/changelog requirements | Defined / review | `production/releases/patch-notes-changelog-requirements-0.1.0.md` |
+| Release gate re-check | FAIL | `production/gate-checks/gate-check-release-2026-05-28.md` |
 
 ---
 
@@ -215,13 +217,13 @@ Rationale:
 | # | Action | Owner | Target |
 | --- | --- | --- | --- |
 | 1 | Get QA Lead sign-off for RR-005 release remediation QA plan. | QA Lead | Next owner review |
-| 2 | Execute RR-002 remote CI evidence path after source-control route is accepted. | DevOps Engineer + QA Lead | After RR-001 decision |
+| 2 | Record QA Lead sign-off for RR-002 remote CI evidence. | DevOps Engineer + QA Lead | Next owner review |
 | 3 | Get QA Lead and Release Manager acceptance for RR-011 release candidate smoke standard. | QA Lead + Release Manager | Next owner review |
 | 4 | Get QA Lead and Creative Director review for RR-012 playtest templates. | QA Lead + Creative Director | Next owner review |
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
 | 6 | Run real soak/performance/memory execution. | QA Lead + Performance Analyst | Before release gate re-run |
-| 7 | Update or supersede release checklist with current remediation state. | Release Manager | Before gate re-run |
-| 8 | Re-run `/gate-check release`. | Producer + Release Manager | After remaining critical evidence updates |
+| 7 | Resolve Godot version, artifact naming, and archive target so a clean RC package can be produced. | Technical Director + Release Manager | Before RC smoke |
+| 8 | Update or supersede release checklist with current remediation state. | Release Manager | Before next gate re-run |
 
 ---
 

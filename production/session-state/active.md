@@ -436,3 +436,14 @@
 - Evidence updated: `production/qa/evidence/ci-evidence-release-remediation-001.md` and `production/releases/source-control-provenance-0.1.0.md`.
 - Sprint status updated: RR-002 moved to review, awaiting QA Lead sign-off; RR-001 remains review, awaiting Producer/Release Manager sign-off.
 - Next recommended: create full build provenance for `v0.1.0-rc.2`, then run release/gate checklist review against the updated CI evidence.
+
+## Session Extract - v0.1.0-rc.2 build provenance and release gate review 2026-05-28
+- Workflow: CCGS build provenance execution plus gate-check release review.
+- Build provenance created: `production/releases/build-provenance-v0.1.0-rc.2.md`.
+- Gate-check report created: `production/gate-checks/gate-check-release-2026-05-28.md`.
+- Source/CI provenance result: PASS for `v0.1.0-rc.2` source tag and GitHub Actions run `26526574962`.
+- Internal debug package provenance result: PASS WITH WARNINGS, using existing `build/windows` artifacts and recorded SHA256 checksums.
+- Clean release candidate package result: NOT READY because ADR-0002 is still Proposed, Godot 4.4/4.6.3 mismatch remains, naming is inconsistent, artifact archive target is not selected, and RC smoke/soak/legal/operations/localization evidence is incomplete.
+- Gate verdict: FAIL for clean Release; internal Windows test remains GO WITH WARNINGS.
+- Milestone and sprint status updated to point to the new provenance and gate-check evidence.
+- Next recommended: resolve ADR-0002 and final artifact naming/storage before producing the first clean RC package and running RC smoke.

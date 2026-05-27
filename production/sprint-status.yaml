@@ -51,8 +51,8 @@ stories:
     status: review
     owner: "Release Manager + Technical Director"
     estimate_days: 1.0
-    blocker: "Awaiting RR-001 source-control decision, ADR-0002 acceptance, naming convention approval, and archive target approval"
-    completed: "Proposed policy created at production/releases/release-artifact-policy-0.1.0.md"
+    blocker: "Build provenance exists for v0.1.0-rc.2; awaiting ADR-0002 acceptance, naming convention approval, archive target approval, .gitignore approval, and owner sign-off"
+    completed: "Proposed policy created at production/releases/release-artifact-policy-0.1.0.md; provenance record created at production/releases/build-provenance-v0.1.0-rc.2.md"
   - id: "RR-005"
     name: "Create release QA plan for remediation evidence"
     file: "production/sprints/sprint-release-remediation-001.md"
@@ -114,7 +114,7 @@ stories:
     status: review
     owner: "QA Lead + Release Manager"
     estimate_days: 0.5
-    blocker: "Awaiting QA Lead/Release Manager acceptance, RR-004 owner acceptance, RR-001/RR-002/ADR-0002 decisions, and first RC execution"
+    blocker: "Source/CI provenance now exists; awaiting QA Lead/Release Manager acceptance, RR-004 owner acceptance, ADR-0002 decision, artifact naming/archive decisions, and first clean RC execution"
     completed: "Smoke standard created at production/qa/release-candidate-smoke-standard-0.1.0.md"
   - id: "RR-012"
     name: "Prepare three playtest report templates"
