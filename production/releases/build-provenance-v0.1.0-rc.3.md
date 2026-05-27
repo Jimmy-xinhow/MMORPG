@@ -1,9 +1,9 @@
-# Build Provenance: v0.1.0-rc.3 Local Candidate
+# Build Provenance: v0.1.0-rc.3
 
 **Date**: 2026-05-28  
 **Workflow Context**: Release Remediation Sprint 001 / First Godot 4.4 Package Candidate  
 **Owners**: Release Manager, Technical Director, QA Lead  
-**Status**: SOURCE TAG AND REMOTE CI PASS; RELEASE ATTACHMENT AND FULL RC SMOKE PENDING  
+**Status**: SOURCE TAG, REMOTE CI, DRAFT RELEASE ATTACHMENT, AND AUTOMATED ARCHIVE SMOKE PASS; FULL VISUAL RC SMOKE PENDING  
 
 ---
 
@@ -11,7 +11,7 @@
 
 Record the first Windows package candidate built with the accepted Godot 4.4 tooling path.
 
-This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provenance but no Godot 4.4 package. It is still not a clean public release because the archive has not yet been attached to a GitHub Release and the full release-candidate smoke standard has not been executed from that attachment.
+This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provenance but no Godot 4.4 package. It is still not a clean public release because only the automated archive smoke has run; fresh visible-window, navigation, and restricted-workflow checks from the RC archive are still pending.
 
 ---
 
@@ -26,7 +26,7 @@ This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provena
 | Remote tag peeled commit | `a9f5e126b948860cba1097f6471a7f99f9f7ecb2` |
 | Current package source state | Committed and pushed |
 | Remote CI for this candidate | PASS |
-| GitHub Release attachment | PENDING |
+| GitHub Release attachment | DRAFT PRERELEASE ATTACHED |
 
 The source includes Godot 4.4 compatibility changes and updated Godot prototype validation for newly wired direct-start pages.
 
@@ -46,6 +46,14 @@ The source includes Godot 4.4 compatibility changes and updated Godot prototype 
 | CI conclusion | `success` |
 
 Note: the current workflow triggers on `main` pushes and pull requests. It does not run a separate tag-push workflow. The `v0.1.0-rc.3` tag points to the CI-passing commit above.
+
+Additional evidence commit:
+
+| Field | Value |
+| --- | --- |
+| Evidence commit SHA | `e774770d81461a64a1a75e21ffa2985ed0a9903e` |
+| Evidence CI run URL | `https://github.com/Jimmy-xinhow/MMORPG/actions/runs/26530361343` |
+| Evidence CI conclusion | `success` |
 
 ---
 
@@ -93,6 +101,21 @@ Legacy `LuckyPackMMORPG` build outputs remain in `build/windows/` as historical 
 
 ---
 
+## Draft Release Attachment
+
+| Field | Value |
+| --- | --- |
+| Release type | Draft prerelease |
+| Release URL | `https://github.com/Jimmy-xinhow/MMORPG/releases/tag/untagged-ed6fb1963ec1573bc99d` |
+| Tag name | `v0.1.0-rc.3` |
+| Attachment name | `brave-legend-v0.1.0-rc.3-windows-internal.zip` |
+| Attachment size | 140754371 |
+| Attachment digest | `sha256:403a7898258ff24f9724789b99312c6665b2b7bc2b268d0c7732908ff95d007e` |
+
+The attachment is stored on a draft prerelease for internal validation only and is not a public launch.
+
+---
+
 ## Validation Results
 
 | Check | Result | Notes |
@@ -104,6 +127,7 @@ Legacy `LuckyPackMMORPG` build outputs remain in `build/windows/` as historical 
 | Package launcher generation | PASS | `Play-Brave-Legend-Online.cmd` and README created |
 | Headless boot smoke | PASS | `BraveLegend.exe --headless --quit-after 3` exited 0 |
 | Project gate | PASS | `npm.cmd run check` passed with 47 tests |
+| Archive extraction smoke | PASS WITH NOTE | `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md`; Godot logged a user log path warning but exited 0 |
 
 ---
 
@@ -122,11 +146,11 @@ The second warning means file/product version string stamping is not yet clean. 
 
 **Local Godot 4.4 package candidate**: PASS WITH WARNINGS.
 
-**Source-provenanced clean RC**: PARTIAL: source tag and CI pass; release attachment and full RC smoke pending.
+**Source-provenanced clean RC**: PARTIAL: source tag, CI, draft release attachment, and automated archive smoke pass; full visual/navigation RC smoke pending.
 
 Remaining blockers before this can become an accepted clean RC:
 
-1. Upload the archive as a GitHub prerelease attachment or record the approved local archive exception.
-2. Resolve or accept the `rcedit` metadata stamping warning.
-3. Run the RC smoke standard against the archive.
-4. Re-run the release gate after attachment and RC smoke evidence exist.
+1. Resolve or accept the `rcedit` metadata stamping warning.
+2. Run the visible-window and navigation portions of the RC smoke standard against the archive.
+3. Re-run the restricted-workflow player-visible review from the RC archive or record owner acceptance of the prior evidence gap.
+4. Re-run the release gate after full RC smoke evidence exists.

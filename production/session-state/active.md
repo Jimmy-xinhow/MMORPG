@@ -494,3 +494,15 @@
 - Note: `.github/workflows/tests.yml` currently triggers on `main` push and pull request only, so no separate tag-push CI run was expected.
 - Build provenance updated: `production/releases/build-provenance-v0.1.0-rc.3.md`.
 - Remaining clean RC blockers: GitHub Release attachment, full RC smoke-standard execution, `rcedit` metadata warning decision, and release gate re-check.
+
+## Session Extract - RC3 draft release attachment and automated archive smoke 2026-05-28
+- Workflow: CCGS release artifact policy plus smoke-check/test-evidence adaptation.
+- Draft prerelease created for tag `v0.1.0-rc.3`.
+- Attachment uploaded: `brave-legend-v0.1.0-rc.3-windows-internal.zip`.
+- GitHub attachment digest: `sha256:403a7898258ff24f9724789b99312c6665b2b7bc2b268d0c7732908ff95d007e`.
+- Archive extracted to `tmp/rc-smoke-v0.1.0-rc.3-20260528/`; extracted artifact hashes matched provenance.
+- Automated archive boot smoke passed: extracted `BraveLegend.exe --headless --quit-after 3` exited 0, with a non-blocking Godot `user://logs` warning.
+- Evidence written:
+  - `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md`
+  - `production/releases/known-issues-0.1.0-internal.md`
+- Remaining clean RC blockers: visible-window feature-page RC smoke, bottom-navigation RC click-through, restricted-workflow review from the RC archive, `rcedit` metadata warning decision, and release gate re-check.

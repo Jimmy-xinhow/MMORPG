@@ -42,7 +42,7 @@ stories:
     status: review
     owner: "Technical Director + Godot Specialist"
     estimate_days: 1.0
-    blocker: "Godot 4.4 tooling provisioned; v0.1.0-rc.3 source tag and remote CI passed; awaiting GitHub Release attachment and full RC smoke evidence"
+    blocker: "Godot 4.4 tooling provisioned; v0.1.0-rc.3 source tag, remote CI, draft release attachment, and automated archive smoke passed; awaiting full visible/navigation RC smoke evidence"
     completed: "ADR accepted at docs/architecture/adr-0002-godot-release-version-strategy.md; Godot 4.4 tooling evidence created at production/releases/godot-4.4-tooling-provisioning-2026-05-28.md"
   - id: "RR-004"
     name: "Define release artifact policy"
@@ -51,7 +51,7 @@ stories:
     status: review
     owner: "Release Manager + Technical Director"
     estimate_days: 1.0
-    blocker: "Local Godot 4.4 RC archive, SHA256 evidence, source tag, and remote CI exist; awaiting GitHub Release attachment upload and RC smoke evidence"
+    blocker: "Local Godot 4.4 RC archive, SHA256 evidence, source tag, remote CI, and draft release attachment exist; awaiting full RC smoke evidence"
     completed: "Policy accepted at production/releases/release-artifact-policy-0.1.0.md; local RC3 candidate provenance created at production/releases/build-provenance-v0.1.0-rc.3.md"
   - id: "RR-005"
     name: "Create release QA plan for remediation evidence"
@@ -114,7 +114,7 @@ stories:
     status: review
     owner: "QA Lead + Release Manager"
     estimate_days: 0.5
-    blocker: "Source-provenanced Godot 4.4 package candidate exists; awaiting GitHub Release attachment and full RC smoke-standard execution"
+    blocker: "Source-provenanced Godot 4.4 package candidate and automated archive smoke exist; awaiting full visible/navigation RC smoke-standard execution"
     completed: "Smoke standard created at production/qa/release-candidate-smoke-standard-0.1.0.md; local RC3 package candidate recorded at production/releases/build-provenance-v0.1.0-rc.3.md"
   - id: "RR-012"
     name: "Prepare three playtest report templates"

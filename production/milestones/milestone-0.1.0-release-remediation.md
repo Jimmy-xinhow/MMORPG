@@ -87,7 +87,7 @@ The current store/legal checklist keeps public PC, Steam, Apple App Store, and G
 | RR-001 | Establish source-control provenance plan | Review | Required decision artifact. |
 | RR-002 | Capture remote CI evidence path | Review | Remote CI evidence is captured; QA Lead sign-off remains. |
 | RR-003 | Resolve Godot version strategy | Review | Godot 4.4 tooling is provisioned; `v0.1.0-rc.3` source tag and remote CI pass. |
-| RR-004 | Define release artifact policy | Review | Local RC archive/checksum and source tag evidence exist; GitHub Release attachment remains pending. |
+| RR-004 | Define release artifact policy | Review | Local RC archive/checksum, source tag, and draft GitHub Release attachment evidence exist; full RC smoke remains pending. |
 | RR-005 | Create release QA plan for remediation evidence | Review | QA plan artifact exists and sprint status metadata is reconciled; awaiting QA Lead sign-off. |
 | RR-006 | Produce performance, soak, and memory profiling protocol | Review | Planning complete; execution still required. |
 | RR-007 | Produce localization gap report | Review | Planning complete; owner decisions required. |
@@ -191,7 +191,9 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Remote CI evidence | Pass / review | `production/qa/evidence/ci-evidence-release-remediation-001.md` |
 | Build provenance | Source/CI pass; clean RC not ready | `production/releases/build-provenance-v0.1.0-rc.2.md` |
 | Clean RC decision package | Local RC candidate produced; source tag/release attachment pending | `production/releases/clean-rc-decision-package-0.1.0.md` |
-| RC3 package candidate | Source tag and remote CI pass; release attachment pending | `production/releases/build-provenance-v0.1.0-rc.3.md` |
+| RC3 package candidate | Source tag, remote CI, draft release attachment, and automated archive smoke pass; full visual/navigation smoke pending | `production/releases/build-provenance-v0.1.0-rc.3.md` |
+| RC3 smoke evidence | Partial pass / automated archive smoke only | `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md` |
+| Known issues | Draft / no open S1-S2 bug files | `production/releases/known-issues-0.1.0-internal.md` |
 | RC smoke standard | Defined / review | `production/qa/release-candidate-smoke-standard-0.1.0.md` |
 | Playtest templates | Defined / review | `production/playtests/RR-012-template-index.md` |
 | Patch notes/changelog requirements | Defined / review | `production/releases/patch-notes-changelog-requirements-0.1.0.md` |
@@ -225,8 +227,8 @@ Rationale:
 | 4 | Get QA Lead and Creative Director review for RR-012 playtest templates. | QA Lead + Creative Director | Next owner review |
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
 | 6 | Run real soak/performance/memory execution. | QA Lead + Performance Analyst | Before release gate re-run |
-| 7 | Attach `brave-legend-v0.1.0-rc.3-windows-internal.zip` to a GitHub prerelease or record an approved local archive exception. | Release Manager | Before RC smoke |
-| 8 | Run the full release-candidate smoke standard against the source-provenanced archive. | QA Lead + Release Manager | Before release gate re-check |
+| 7 | Run visible-window feature-page, bottom-navigation, and restricted-workflow RC smoke from the archived `v0.1.0-rc.3` package. | QA Lead + Release Manager | Before release gate re-check |
+| 8 | Decide the `rcedit` metadata-stamping warning: configure `rcedit`, disable metadata modification, or accept for internal-only RC. | Release Manager + Technical Director | Before clean RC sign-off |
 
 ---
 
