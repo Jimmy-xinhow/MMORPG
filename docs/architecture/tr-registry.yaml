@@ -1,0 +1,23 @@
+version: 1
+last_updated: 2026-05-27
+requirements:
+  - id: TR-godot-client-001
+    system: godot-client
+    status: active
+    requirement: Godot client must keep the Node backend as the rule and API layer while reading and mutating only player-safe state through documented player endpoints.
+    source: godot-client/README.md
+  - id: TR-godot-client-002
+    system: godot-client
+    status: active
+    requirement: Godot client must preserve the 432x768 mobile portrait interface with top HUD, character stage, quest/status panel, feature pages, and bottom navigation.
+    source: godot-client/README.md
+  - id: TR-godot-client-003
+    system: godot-client
+    status: active
+    requirement: Home screen must show character, scene, HUD, status log, enemy target, and function menu without pack or trade progress leaking onto home.
+    source: docs/art-completion-checklist.md
+  - id: TR-godot-client-004
+    system: godot-client
+    status: active
+    requirement: Godot client source must be modular enough for live pack, market, role, inventory, challenge, and skill pages to evolve without concentrating API, page state, and rendering logic in one script.
+    source: CCGS adoption scaffold for planned Godot client engineering

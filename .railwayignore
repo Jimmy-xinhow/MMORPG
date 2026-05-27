@@ -1,0 +1,6 @@
+build/
+tools/
+godot-client/tmp/
+tmp/
+data/
+*.log

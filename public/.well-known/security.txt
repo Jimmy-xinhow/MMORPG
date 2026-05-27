@@ -1,0 +1,3 @@
+Contact: mailto:security@example.com
+Policy: /legal/terms.html
+Preferred-Languages: zh-Hant

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">幸運禮包</title>
+  <desc id="desc">金色禮包與寶石圖案</desc>
+  <rect width="320" height="320" fill="#fffaf0"/>
+  <path d="M70 108h180v154H70z" fill="#f4c84a" stroke="#161616" stroke-width="8"/>
+  <path d="M52 82h216v54H52z" fill="#0f766e" stroke="#161616" stroke-width="8"/>
+  <path d="M144 82h32v180h-32z" fill="#ef5b45" stroke="#161616" stroke-width="6"/>
+  <path d="M104 80c-18-36 42-48 56 2-44 14-54 9-56-2z" fill="#f7d7d0" stroke="#161616" stroke-width="7"/>
+  <path d="M216 80c18-36-42-48-56 2 44 14 54 9 56-2z" fill="#f7d7d0" stroke="#161616" stroke-width="7"/>
+  <path d="M106 186l34-34 34 34-34 34z" fill="#ffffff" stroke="#161616" stroke-width="6"/>
+  <path d="M180 176l20-20 20 20-20 20z" fill="#d8f1ea" stroke="#161616" stroke-width="5"/>
+  <path d="M91 241h138" stroke="#161616" stroke-width="6" stroke-linecap="round"/>
+</svg>

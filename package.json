@@ -1,0 +1,29 @@
+{
+  "name": "lucky-pack-mmorpg",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-server.ps1",
+    "godot:open": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/open-godot-client.ps1",
+    "godot:open:online": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$env:GODOT_API_BASE='https://lucky-pack-api-production.up.railway.app'; & scripts/open-godot-client.ps1\"",
+    "godot:package:internal": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-godot-internal-test.ps1",
+    "godot:package:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-windows-internal-test.ps1",
+    "start:production": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-production.ps1",
+    "start:cloud": "node scripts/start-production.mjs",
+    "start:memory": "node src/server.js",
+    "seed": "node scripts/seed-dev.mjs",
+    "reset:data": "node scripts/reset-dev-data.mjs",
+    "test": "node --test",
+    "check:docs": "node scripts/validate-planning-docs.mjs",
+    "smoke:api": "node scripts/smoke-api.mjs",
+    "smoke:ui": "node scripts/smoke-ui.mjs",
+    "smoke:production": "node scripts/smoke-production.mjs",
+    "check:godot": "node scripts/validate-godot-prototype.mjs",
+    "check:api": "node scripts/validate-api-contract.mjs",
+    "check:encoding": "node scripts/check-encoding.mjs",
+    "check:goal": "node scripts/validate-goal-seven.mjs && node scripts/validate-art-pipeline.mjs",
+    "check:art": "node scripts/validate-art-pipeline.mjs && node scripts/validate-production-art-assets.mjs",
+    "check": "node scripts/check-encoding.mjs && node scripts/validate-planning-docs.mjs && node scripts/validate-api-contract.mjs && node scripts/validate-godot-prototype.mjs && node scripts/validate-goal-seven.mjs && node scripts/validate-art-pipeline.mjs && node scripts/validate-production-art-assets.mjs && node --test && node scripts/smoke-ui.mjs && node scripts/smoke-api.mjs && node scripts/smoke-production.mjs"
+  }
+}

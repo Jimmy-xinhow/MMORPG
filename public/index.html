@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>幸運禮包世界</title>
+    <meta name="theme-color" content="#172019" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell game-shell">
+      <header class="topbar player-only-topbar game-topbar">
+        <div>
+          <p class="eyebrow">Lucky Pack MMORPG</p>
+          <h1>幸運禮包世界</h1>
+          <p class="lead">手機放置冒險：取得禮包、等待交易場、開包取得遊戲內容。遊戲資產都只屬於遊戲體驗，不提供提領現金。</p>
+        </div>
+        <select id="demoRole" hidden aria-hidden="true">
+          <option value="ADMIN">ADMIN</option>
+        </select>
+        <div class="hud-rule" id="boundaryCopy">遊戲資產不可提現</div>
+      </header>
+
+      <section class="live-feedback" aria-label="操作回饋">
+        <div class="toast" id="actionToast" role="status" aria-live="polite">載入中...</div>
+      </section>
+
+      <section class="view-section" data-view="player" aria-label="玩家主畫面">
+        <section class="game-screen" aria-label="遊戲主畫面">
+          <aside class="inventory-strip" aria-label="玩家資產摘要">
+            <div>
+              <span>禮包</span>
+              <strong id="hudPackStatus">尚未取得</strong>
+            </div>
+            <div>
+              <span>交易場</span>
+              <strong id="hudMarketStatus">未開啟</strong>
+            </div>
+            <div>
+              <span>開包結果</span>
+              <strong id="hudOpenStatus">尚未開包</strong>
+            </div>
+          </aside>
+
+          <aside class="quest-panel" aria-label="角色目前執行狀態">
+            <div class="status-titlebar">角色目前狀態</div>
+            <p class="section-kicker">Current Quest</p>
+            <h2 id="characterStatusTitle">待命中</h2>
+            <p id="characterStatusText">角色目前待命中，下一步是取得第一個幸運禮包。</p>
+            <button class="primary-action quest-action" data-action="playerNext">取得幸運禮包</button>
+            <dl class="status-lines" id="characterStatusFacts">
+              <div><dt>目前任務</dt><dd>取得幸運禮包</dd></div>
+              <div><dt>背包狀態</dt><dd>空</dd></div>
+              <div><dt>提現規則</dt><dd>遊戲資產不可提現</dd></div>
+            </dl>
+          </aside>
+
+          <article class="character-frame" id="characterFrame" data-avatar-state="idle" aria-label="角色展示框">
+            <div class="character-scene">
+              <div class="avatar-aura"></div>
+              <div class="avatar-sprite" aria-hidden="true">
+                <span class="avatar-head"></span>
+                <span class="avatar-body"></span>
+                <span class="avatar-arm avatar-arm-left"></span>
+                <span class="avatar-arm avatar-arm-right"></span>
+                <span class="avatar-leg avatar-leg-left"></span>
+                <span class="avatar-leg avatar-leg-right"></span>
+                <span class="avatar-weapon"></span>
+              </div>
+              <img class="avatar-pack" src="/assets/lucky-pack.svg" alt="幸運禮包" />
+            </div>
+            <div class="character-nameplate" id="characterNameplate">Lv.1 禮包冒險者</div>
+          </article>
+        </section>
+
+        <section class="game-tabs-shell" aria-label="玩家功能">
+          <div class="panel-heading tabs-heading">
+            <div>
+              <p class="section-kicker">Player Menu</p>
+              <h2>玩家功能</h2>
+            </div>
+          </div>
+
+          <nav class="player-tabs" role="tablist" aria-label="玩家功能選單">
+            <button id="tab-inventory" class="is-active" data-player-tab="inventory" type="button" role="tab" aria-selected="true" aria-controls="panel-inventory">背包</button>
+            <button id="tab-market" data-player-tab="market" type="button" role="tab" aria-selected="false" aria-controls="panel-market">交易場</button>
+            <button id="tab-open" data-player-tab="open" type="button" role="tab" aria-selected="false" aria-controls="panel-open">開包</button>
+            <button id="tab-records" data-player-tab="records" type="button" role="tab" aria-selected="false" aria-controls="panel-records">紀錄</button>
+            <button id="tab-rules" data-player-tab="rules" type="button" role="tab" aria-selected="false" aria-controls="panel-rules">規則</button>
+          </nav>
+
+          <section id="panel-inventory" class="player-panel" data-player-panel="inventory" role="tabpanel" aria-labelledby="tab-inventory">
+            <section class="player-stage single-panel-stage" aria-label="玩家背包">
+              <article class="player-card pack-showcase">
+                <p class="section-kicker">Inventory</p>
+                <h2>玩家背包</h2>
+                <div id="playerPackCard"></div>
+              </article>
+            </section>
+          </section>
+
+          <section id="panel-market" class="player-panel" data-player-panel="market" role="tabpanel" aria-labelledby="tab-market" hidden>
+            <section class="player-stage single-panel-stage" aria-label="交易場行情">
+              <article class="player-card market-showcase">
+                <p class="section-kicker">Marketplace</p>
+                <h2>交易場行情</h2>
+                <div id="playerMarketCard"></div>
+              </article>
+            </section>
+          </section>
+
+          <section id="panel-open" class="player-panel" data-player-panel="open" role="tabpanel" aria-labelledby="tab-open" hidden>
+            <section class="player-stage single-panel-stage" aria-label="開包結果">
+              <article class="player-card reward-showcase">
+                <p class="section-kicker">Open Result</p>
+                <h2>開包結果</h2>
+                <div id="playerRewardCard"></div>
+                <p class="asset-note">開出的內容只屬於遊戲進度，不會形成可提現餘額。</p>
+              </article>
+            </section>
+          </section>
+
+          <section id="panel-records" class="player-panel" data-player-panel="records" role="tabpanel" aria-labelledby="tab-records" hidden>
+            <section class="feed-band" aria-label="玩家紀錄">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Activity</p>
+                  <h2>遊戲紀錄</h2>
+                </div>
+              </div>
+              <div class="feed-list" id="playerFeed"></div>
+            </section>
+
+            <section class="progress-band" aria-label="玩家流程">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Progress</p>
+                  <h2>目前流程</h2>
+                </div>
+              </div>
+              <ol class="progress-list" id="playerProgress"></ol>
+            </section>
+          </section>
+
+          <section id="panel-rules" class="player-panel" data-player-panel="rules" role="tabpanel" aria-labelledby="tab-rules" hidden>
+            <section class="product-map" aria-label="遊戲玩法">
+              <article>
+                <p class="section-kicker">Step 1</p>
+                <h2>取得幸運禮包</h2>
+                <p>禮包是遊戲內容容器，不是金融商品。</p>
+              </article>
+              <article>
+                <p class="section-kicker">Step 2</p>
+                <h2>交易或持有</h2>
+                <p>交易場開啟時可以掛單或購買；每次交易都會留下紀錄。</p>
+              </article>
+              <article>
+                <p class="section-kicker">Step 3</p>
+                <h2>開包取得內容</h2>
+                <p>開包後取得遊戲內容；結果不可提現。</p>
+              </article>
+            </section>
+
+            <section class="rule-board" aria-label="不可提現規則">
+              <article>
+                <p class="section-kicker">Asset Rules</p>
+                <h2>哪些內容不可提現</h2>
+                <p class="asset-note">以下內容都只屬於遊戲體驗或遊戲紀錄，不會形成可提現餘額。</p>
+                <ul class="asset-matrix">
+                  <li><span>GC / 遊戲幣</span><strong>不可提現</strong></li>
+                  <li><span>幸運禮包</span><strong>不可提現</strong></li>
+                  <li><span>道具 / 票券 / Boss 獎勵</span><strong>不可提現</strong></li>
+                  <li><span>玩家交易價差</span><strong>不可提現</strong></li>
+                </ul>
+              </article>
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="/legal/terms.html">服務條款</a>
+      <a href="/legal/privacy.html">隱私權政策</a>
+      <a href="/legal/probability.html">機率與內容揭露</a>
+      <a href="/legal/refund.html">退款與客服</a>
+    </footer>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
