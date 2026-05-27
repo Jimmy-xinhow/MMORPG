@@ -3,7 +3,7 @@
 **Date**: 2026-05-28  
 **Workflow Context**: Release Remediation Sprint 001 / First Godot 4.4 Package Candidate  
 **Owners**: Release Manager, Technical Director, QA Lead  
-**Status**: LOCAL RC CANDIDATE BUILT; SOURCE TAG, REMOTE CI, AND RELEASE ATTACHMENT PENDING  
+**Status**: SOURCE TAG AND REMOTE CI PASS; RELEASE ATTACHMENT AND FULL RC SMOKE PENDING  
 
 ---
 
@@ -11,7 +11,7 @@
 
 Record the first Windows package candidate built with the accepted Godot 4.4 tooling path.
 
-This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provenance but no Godot 4.4 package. It is still not a clean public release because the package has not yet been rebuilt from a pushed source tag with remote CI evidence and has not been attached to a GitHub Release.
+This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provenance but no Godot 4.4 package. It is still not a clean public release because the archive has not yet been attached to a GitHub Release and the full release-candidate smoke standard has not been executed from that attachment.
 
 ---
 
@@ -21,12 +21,31 @@ This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provena
 | --- | --- |
 | Repository remote URL | `https://github.com/Jimmy-xinhow/MMORPG.git` |
 | Branch | `main` |
-| Intended successor tag | `v0.1.0-rc.3` |
-| Current package source state | Local working tree candidate |
-| Remote CI for this candidate | PENDING |
+| Source commit SHA | `a9f5e126b948860cba1097f6471a7f99f9f7ecb2` |
+| Source tag | `v0.1.0-rc.3` |
+| Remote tag peeled commit | `a9f5e126b948860cba1097f6471a7f99f9f7ecb2` |
+| Current package source state | Committed and pushed |
+| Remote CI for this candidate | PASS |
 | GitHub Release attachment | PENDING |
 
-The local source includes Godot 4.4 compatibility changes and updated Godot prototype validation for newly wired direct-start pages. It must be committed and pass remote CI before this candidate can become a source-provenanced RC.
+The source includes Godot 4.4 compatibility changes and updated Godot prototype validation for newly wired direct-start pages.
+
+---
+
+## Remote CI Evidence
+
+| Field | Value |
+| --- | --- |
+| Workflow file | `.github/workflows/tests.yml` |
+| Workflow name | `Tests` |
+| Job | `Project check` |
+| Command | `npm run check` |
+| Event | `push` to `main` |
+| CI run URL | `https://github.com/Jimmy-xinhow/MMORPG/actions/runs/26530101562` |
+| CI run timestamp | `2026-05-27T18:18:01Z` |
+| CI conclusion | `success` |
+
+Note: the current workflow triggers on `main` pushes and pull requests. It does not run a separate tag-push workflow. The `v0.1.0-rc.3` tag points to the CI-passing commit above.
 
 ---
 
@@ -103,14 +122,11 @@ The second warning means file/product version string stamping is not yet clean. 
 
 **Local Godot 4.4 package candidate**: PASS WITH WARNINGS.
 
-**Source-provenanced clean RC**: NOT READY.
+**Source-provenanced clean RC**: PARTIAL: source tag and CI pass; release attachment and full RC smoke pending.
 
 Remaining blockers before this can become an accepted clean RC:
 
-1. Commit the Godot 4.4 compatibility and validator/source asset updates.
-2. Push `main` and capture passing remote GitHub Actions evidence.
-3. Create/push successor tag `v0.1.0-rc.3` after CI passes.
-4. Rebuild or re-verify the archive against that tag.
-5. Upload the archive as a GitHub prerelease attachment or record the approved local archive exception.
-6. Resolve or accept the `rcedit` metadata stamping warning.
-7. Run the RC smoke standard against the archive.
+1. Upload the archive as a GitHub prerelease attachment or record the approved local archive exception.
+2. Resolve or accept the `rcedit` metadata stamping warning.
+3. Run the RC smoke standard against the archive.
+4. Re-run the release gate after attachment and RC smoke evidence exist.

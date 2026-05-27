@@ -217,11 +217,11 @@ release-archives/
 After this source-policy application, the next implementation stage is:
 
 1. Provision accepted Godot 4.4 tooling. **Complete with warnings**: see `production/releases/godot-4.4-tooling-provisioning-2026-05-28.md`.
-2. Align clean RC artifact naming in validators, package docs, smoke standard, and future provenance. **Partially complete locally**: `BraveLegend.exe` package candidate exists; source commit/tag is pending.
-3. Rebuild a clean RC package from the accepted tag. **Pending**: current archive is a local candidate, not tag-provenanced.
+2. Align clean RC artifact naming in validators, package docs, smoke standard, and future provenance. **Complete for source-provenance scope**: `BraveLegend.exe` package candidate exists and source tag is pushed.
+3. Rebuild a clean RC package from the accepted tag. **Partial**: current archive was built before tag push but the tag points to the same CI-passing source commit; post-tag archive re-verification remains pending.
 4. Create and checksum the release archive. **Complete locally**: see `production/releases/build-provenance-v0.1.0-rc.3.md`.
-5. Push a successor tag, expected `v0.1.0-rc.3`. **Pending**.
-6. Run remote CI and local RC smoke. **Local smoke complete; remote CI pending**.
+5. Push a successor tag, expected `v0.1.0-rc.3`. **Complete**.
+6. Run remote CI and local RC smoke. **Complete for source commit and local boot smoke; full RC smoke standard pending**.
 7. Update build provenance and release gate report. **Build provenance updated; release gate re-run pending**.
 
 ---
@@ -239,7 +239,7 @@ This decision package is ready for owner review when:
 - [x] Approved source-policy decisions are applied in source.
 - [x] Accepted Godot 4.4 tooling is provisioned.
 - [x] Clean RC artifact naming is applied to generated package evidence.
-- [ ] Clean RC package is rebuilt or validated from a pushed source tag.
+- [ ] Clean RC archive is attached to a GitHub prerelease and validated through the full RC smoke standard.
 
 ---
 
@@ -247,4 +247,4 @@ This decision package is ready for owner review when:
 
 **Decision readiness**: APPLIED FOR SOURCE POLICY.
 
-**Clean RC package readiness**: PARTIAL LOCAL CANDIDATE. Blocked until source commit/tag, remote CI, release attachment, and RC smoke evidence are complete.
+**Clean RC package readiness**: PARTIAL SOURCE-PROVENANCED CANDIDATE. Blocked until GitHub Release attachment, full RC smoke evidence, and release gate re-check are complete.

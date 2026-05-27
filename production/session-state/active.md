@@ -485,3 +485,12 @@
   - `production/releases/build-provenance-v0.1.0-rc.3.md`
 - Warnings: export completed with editor cache and missing `rcedit` warnings; current RC3 archive is local only and is not yet source-tag/remote-CI/GitHub-Release provenanced.
 - Next recommended: commit/push source + required composite assets, capture remote CI, tag `v0.1.0-rc.3`, attach archive to GitHub prerelease, then run the RC smoke standard.
+
+## Session Extract - RC3 source tag and remote CI evidence 2026-05-28
+- Workflow: CCGS release remediation plus GitHub CI/source-provenance workflow.
+- Commit created and pushed: `a9f5e126b948860cba1097f6471a7f99f9f7ecb2` (`Prepare Godot 4.4 RC3 candidate`).
+- Remote GitHub Actions run passed: `https://github.com/Jimmy-xinhow/MMORPG/actions/runs/26530101562`, workflow `Tests`, conclusion `success`.
+- Tag created and pushed: `v0.1.0-rc.3`, peeled commit `a9f5e126b948860cba1097f6471a7f99f9f7ecb2`.
+- Note: `.github/workflows/tests.yml` currently triggers on `main` push and pull request only, so no separate tag-push CI run was expected.
+- Build provenance updated: `production/releases/build-provenance-v0.1.0-rc.3.md`.
+- Remaining clean RC blockers: GitHub Release attachment, full RC smoke-standard execution, `rcedit` metadata warning decision, and release gate re-check.
