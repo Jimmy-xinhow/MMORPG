@@ -6,3 +6,4 @@ godot-client/.godot/
 build/windows/
 build/internal-test/
 release-archives/
+tools/godot-*/

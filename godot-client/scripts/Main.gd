@@ -56,6 +56,18 @@ const PAGE_COMPOSITE_PATHS := {
 	"pass_progress": "res://assets/production/ui/pass-progress-target-composite.png",
 	"timed_challenge": "res://assets/production/ui/timed-challenge-target-composite.png",
 	"event_exchange_confirm": "res://assets/production/ui/event-exchange-confirm-target-composite.png",
+	"character_bio": "res://assets/production/ui/character-bio-target-composite.png",
+	"region_reputation": "res://assets/production/ui/region-reputation-target-composite.png",
+	"material_storage": "res://assets/production/ui/material-storage-target-composite.png",
+	"monster_drops": "res://assets/production/ui/monster-drops-target-composite.png",
+	"guild_members": "res://assets/production/ui/guild-members-target-composite.png",
+	"guild_research": "res://assets/production/ui/guild-research-target-composite.png",
+	"party_tactics": "res://assets/production/ui/party-tactics-target-composite.png",
+	"friend_support_detail": "res://assets/production/ui/friend-support-detail-target-composite.png",
+	"class_specialization": "res://assets/production/ui/class-specialization-target-composite.png",
+	"rune_config": "res://assets/production/ui/rune-config-target-composite.png",
+	"dungeon_prepare": "res://assets/production/ui/dungeon-prepare-target-composite.png",
+	"drop_settlement_detail": "res://assets/production/ui/drop-settlement-detail-target-composite.png",
 }
 const PACK_COMPOSITE_PATHS := {
 	"main": "res://assets/production/ui/packs-target-composite.png",
@@ -160,7 +172,7 @@ const LIVEOPS_COMPOSITE_PATHS := {
 }
 const TAB_NAMES := ["首頁", "角色", "禮包", "交易", "挑戰", "公會", "系統"]
 const PAGE_NAMES := ["home", "role", "packs", "market", "challenge", "guild", "system"]
-const ARG_PAGE_NAMES := ["home", "role", "packs", "market", "challenge", "guild", "system", "inventory", "skills", "shop", "quests", "ranking", "mail", "friends", "world", "account", "liveops", "feedback", "achievements", "codex", "tutorial", "chat", "party", "pets", "enhance", "arena", "boss_preview", "dispatch_result", "battle_stats", "title_detail", "codex_detail", "appearance_collection", "badge_collection", "tutorial_battle", "tutorial_inventory", "tutorial_skills", "tutorial_guild", "daily_checkin", "pass_progress", "timed_challenge", "event_exchange_confirm"]
+const ARG_PAGE_NAMES := ["home", "role", "packs", "market", "challenge", "guild", "system", "inventory", "skills", "shop", "quests", "ranking", "mail", "friends", "world", "account", "liveops", "feedback", "achievements", "codex", "tutorial", "chat", "party", "pets", "enhance", "arena", "boss_preview", "dispatch_result", "battle_stats", "title_detail", "codex_detail", "appearance_collection", "badge_collection", "tutorial_battle", "tutorial_inventory", "tutorial_skills", "tutorial_guild", "daily_checkin", "pass_progress", "timed_challenge", "event_exchange_confirm", "character_bio", "region_reputation", "material_storage", "monster_drops", "guild_members", "guild_research", "party_tactics", "friend_support_detail", "class_specialization", "rune_config", "dungeon_prepare", "drop_settlement_detail"]
 
 var api_base_url := "http://127.0.0.1:3000"
 var game_state := {
@@ -891,6 +903,42 @@ func _build_page_hotspots(root: Control) -> void:
 		{"page": "event_exchange_confirm", "action": "event_exchange_confirm_back_liveops", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
 		{"page": "event_exchange_confirm", "action": "event_exchange_confirm_cancel", "tooltip": "cancel", "rect": Rect2(92, 560, 116, 48)},
 		{"page": "event_exchange_confirm", "action": "event_exchange_confirm_confirm", "tooltip": "confirm", "rect": Rect2(226, 560, 132, 48)},
+		{"page": "character_bio", "action": "character_bio_back_role", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "character_bio", "action": "character_bio_chapter", "tooltip": "chapter", "rect": Rect2(116, 642, 200, 50)},
+		{"page": "character_bio", "action": "character_bio_relation", "tooltip": "relation", "rect": Rect2(36, 404, 330, 62)},
+		{"page": "region_reputation", "action": "region_reputation_back_world", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "region_reputation", "action": "region_reputation_task", "tooltip": "task", "rect": Rect2(318, 548, 74, 42)},
+		{"page": "region_reputation", "action": "region_reputation_route", "tooltip": "route", "rect": Rect2(116, 642, 200, 50)},
+		{"page": "material_storage", "action": "material_storage_back_inventory", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "material_storage", "action": "material_storage_filter", "tooltip": "filter", "rect": Rect2(20, 206, 68, 266)},
+		{"page": "material_storage", "action": "material_storage_source", "tooltip": "source", "rect": Rect2(226, 642, 150, 46)},
+		{"page": "monster_drops", "action": "monster_drops_back_codex", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "monster_drops", "action": "monster_drops_select", "tooltip": "monster", "rect": Rect2(36, 194, 122, 336)},
+		{"page": "monster_drops", "action": "monster_drops_route", "tooltip": "route", "rect": Rect2(226, 642, 150, 46)},
+		{"page": "guild_members", "action": "guild_members_back_guild", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "guild_members", "action": "guild_members_detail", "tooltip": "member", "rect": Rect2(36, 206, 356, 74)},
+		{"page": "guild_members", "action": "guild_members_invite", "tooltip": "invite", "rect": Rect2(116, 642, 200, 50)},
+		{"page": "guild_research", "action": "guild_research_back_guild", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "guild_research", "action": "guild_research_donate", "tooltip": "donate", "rect": Rect2(44, 596, 142, 46)},
+		{"page": "guild_research", "action": "guild_research_start", "tooltip": "research", "rect": Rect2(206, 596, 150, 46)},
+		{"page": "party_tactics", "action": "party_tactics_back_party", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "party_tactics", "action": "party_tactics_slot", "tooltip": "slot", "rect": Rect2(78, 244, 276, 196)},
+		{"page": "party_tactics", "action": "party_tactics_save", "tooltip": "save", "rect": Rect2(116, 642, 200, 50)},
+		{"page": "friend_support_detail", "action": "friend_support_detail_back_friends", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "friend_support_detail", "action": "friend_support_detail_message", "tooltip": "message", "rect": Rect2(64, 642, 134, 46)},
+		{"page": "friend_support_detail", "action": "friend_support_detail_assign", "tooltip": "assign", "rect": Rect2(218, 642, 150, 46)},
+		{"page": "class_specialization", "action": "class_specialization_back_role", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "class_specialization", "action": "class_specialization_trial", "tooltip": "trial", "rect": Rect2(38, 510, 118, 48)},
+		{"page": "class_specialization", "action": "class_specialization_confirm", "tooltip": "confirm", "rect": Rect2(116, 642, 200, 50)},
+		{"page": "rune_config", "action": "rune_config_back_skills", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "rune_config", "action": "rune_config_socket", "tooltip": "socket", "rect": Rect2(78, 174, 276, 240)},
+		{"page": "rune_config", "action": "rune_config_save", "tooltip": "save", "rect": Rect2(116, 642, 200, 50)},
+		{"page": "dungeon_prepare", "action": "dungeon_prepare_back_challenge", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "dungeon_prepare", "action": "dungeon_prepare_detail", "tooltip": "detail", "rect": Rect2(292, 296, 86, 40)},
+		{"page": "dungeon_prepare", "action": "dungeon_prepare_enter", "tooltip": "enter", "rect": Rect2(270, 642, 122, 48)},
+		{"page": "drop_settlement_detail", "action": "drop_settlement_detail_back_challenge", "tooltip": "back", "rect": Rect2(18, 30, 56, 56)},
+		{"page": "drop_settlement_detail", "action": "drop_settlement_detail_drops", "tooltip": "drops", "rect": Rect2(42, 286, 336, 206)},
+		{"page": "drop_settlement_detail", "action": "drop_settlement_detail_collect", "tooltip": "collect", "rect": Rect2(116, 642, 200, 50)},
 	]
 	for spec in specs:
 		var rect: Rect2 = spec["rect"]
@@ -1943,6 +1991,84 @@ func _on_page_hotspot_pressed(page_name: String, hotspot_action: String) -> void
 			_push_event("活動道具已兌換。")
 			page_flow_state.select_page("liveops")
 			_set_liveops_view("shop")
+		"character_bio_back_role":
+			page_flow_state.select_page("role")
+		"character_bio_chapter":
+			_push_event("角色傳記章節已開啟。")
+		"character_bio_relation":
+			page_flow_state.select_page("friends")
+		"region_reputation_back_world":
+			page_flow_state.select_page("world")
+		"region_reputation_task":
+			page_flow_state.select_page("quests")
+		"region_reputation_route":
+			page_flow_state.select_page("world")
+			_set_world_view("region")
+		"material_storage_back_inventory":
+			page_flow_state.select_page("inventory")
+		"material_storage_filter":
+			_push_event("素材篩選已更新。")
+		"material_storage_source":
+			page_flow_state.select_page("world")
+			_set_world_view("stage")
+		"monster_drops_back_codex":
+			page_flow_state.select_page("codex")
+		"monster_drops_select":
+			_push_event("怪物掉落資訊已切換。")
+		"monster_drops_route":
+			page_flow_state.select_page("world")
+			_set_world_view("stage")
+		"guild_members_back_guild":
+			page_flow_state.select_page("guild")
+		"guild_members_detail":
+			_push_event("公會成員詳情已開啟。")
+		"guild_members_invite":
+			page_flow_state.select_page("friends")
+		"guild_research_back_guild":
+			page_flow_state.select_page("guild")
+		"guild_research_donate":
+			game_state["gc"] = maxi(0, int(game_state["gc"]) - 40)
+			_push_event("公會研究材料已投入。")
+		"guild_research_start":
+			_push_event("公會研究已開始。")
+		"party_tactics_back_party":
+			page_flow_state.select_page("party")
+		"party_tactics_slot":
+			_push_event("隊伍站位已調整。")
+		"party_tactics_save":
+			_push_event("隊伍戰術已保存。")
+		"friend_support_detail_back_friends":
+			page_flow_state.select_page("friends")
+		"friend_support_detail_assign":
+			_push_event("好友支援已指派。")
+		"friend_support_detail_message":
+			page_flow_state.select_page("chat")
+		"class_specialization_back_role":
+			page_flow_state.select_page("role")
+		"class_specialization_trial":
+			page_flow_state.select_page("challenge")
+			_set_challenge_view("battle")
+		"class_specialization_confirm":
+			_push_event("職業專精已確認。")
+		"rune_config_back_skills":
+			page_flow_state.select_page("skills")
+		"rune_config_socket":
+			_push_event("符文插槽已選取。")
+		"rune_config_save":
+			_push_event("符文配置已保存。")
+		"dungeon_prepare_back_challenge":
+			page_flow_state.select_page("challenge")
+		"dungeon_prepare_detail":
+			_push_event("副本敵情已展開。")
+		"dungeon_prepare_enter":
+			page_flow_state.select_page("challenge")
+			_set_challenge_view("battle")
+		"drop_settlement_detail_back_challenge":
+			page_flow_state.select_page("challenge")
+		"drop_settlement_detail_drops":
+			page_flow_state.select_page("inventory")
+		"drop_settlement_detail_collect":
+			_push_event("副本掉落已領取。")
 		_:
 			return
 	_refresh_all()
@@ -2401,6 +2527,15 @@ class ArtIcon:
 
 	var icon_type := "pack"
 
+	func _draw_ellipse_compat(center: Vector2, radius_x: float, radius_y: float, color: Color) -> void:
+		var points := PackedVector2Array()
+		var colors := PackedColorArray()
+		for i in range(32):
+			var angle := TAU * float(i) / 32.0
+			points.append(center + Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
+			colors.append(color)
+		draw_polygon(points, colors)
+
 	func _draw() -> void:
 		var texture := _icon_texture(icon_type)
 		if texture != null:
@@ -2439,7 +2574,7 @@ class ArtIcon:
 				draw_circle(rect.position + Vector2(27, 27), 4, c2)
 			"price":
 				for i in range(3):
-					draw_ellipse(rect.position + Vector2(12 + i * 3, 30 - i * 8), 13, 5, c2)
+					_draw_ellipse_compat(rect.position + Vector2(12 + i * 3, 30 - i * 8), 13, 5, c2)
 				draw_string(ThemeDB.fallback_font, rect.position + Vector2(15, 25), "G", HORIZONTAL_ALIGNMENT_LEFT, 20, 14, Color("#26384c"))
 			"lock":
 				draw_rect(Rect2(rect.position + Vector2(11, 21), Vector2(23, 17)), c2)
@@ -2605,6 +2740,16 @@ class PaperDollView:
 	var visual_state: String = "idle"
 	var portrait_mode := false
 	var base_texture_mode := false
+
+	func _draw_ellipse_compat(center: Vector2, radius_x: float, radius_y: float, color: Color) -> void:
+		var points := PackedVector2Array()
+		var colors := PackedColorArray()
+		for i in range(32):
+			var angle := TAU * float(i) / 32.0
+			points.append(center + Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
+			colors.append(color)
+		draw_polygon(points, colors)
+
 	var equipped: Dictionary = {
 		"weapon": "銅製短劍",
 		"armor": "初心者外套",
@@ -2682,7 +2827,7 @@ class PaperDollView:
 		var body := _load_texture(body_path)
 		if body == null:
 			return false
-		draw_ellipse(center + Vector2(0, 45 * scale), 34.0 * scale, 6.0 * scale, Color("#03060b", 0.38))
+		_draw_ellipse_compat(center + Vector2(0, 45 * scale), 34.0 * scale, 6.0 * scale, Color("#03060b", 0.38))
 		var cloak := _load_texture("res://assets/production/equipment/blue-cloak-layer.png")
 		if cloak != null:
 			draw_texture_rect(cloak, Rect2(center + Vector2(-43, -62) * scale, Vector2(86, 96) * scale), false)
@@ -2716,7 +2861,7 @@ class PaperDollView:
 		return ImageTexture.create_from_image(image)
 
 	func _draw_shadow(center: Vector2, scale: float) -> void:
-		draw_ellipse(center + Vector2(0, 38 * scale), 38.0 * scale, 7.0 * scale, Color("#03060b", 0.45))
+		_draw_ellipse_compat(center + Vector2(0, 38 * scale), 38.0 * scale, 7.0 * scale, Color("#03060b", 0.45))
 
 	func _draw_cape(center: Vector2, scale: float) -> void:
 		var cape_color := Color("#2c5b8e")
@@ -2815,6 +2960,15 @@ class GameWorld:
 	var page_textures: Dictionary = {}
 	var t := 0.0
 	var state := {}
+
+	func _draw_ellipse_compat(center: Vector2, radius_x: float, radius_y: float, color: Color) -> void:
+		var points := PackedVector2Array()
+		var colors := PackedColorArray()
+		for i in range(32):
+			var angle := TAU * float(i) / 32.0
+			points.append(center + Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
+			colors.append(color)
+		draw_polygon(points, colors)
 
 	func _ready() -> void:
 		home_composite_texture = _load_png_texture(HOME_COMPOSITE_PATH)
@@ -3025,7 +3179,7 @@ class GameWorld:
 		draw_string(font, Vector2(296, 166), "戰力 %d" % int(state.get("party_power", 2160)), HORIZONTAL_ALIGNMENT_LEFT, 118, 16, Color("#72ffb3"))
 		var cx := 338.0
 		var cy := 346.0 + sin(t * 2.0) * 2.0
-		draw_ellipse(Vector2(cx, cy + 38), 46.0, 8.0, Color("#05070c", 0.44))
+		_draw_ellipse_compat(Vector2(cx, cy + 38), 46.0, 8.0, Color("#05070c", 0.44))
 		if chest_texture != null:
 			draw_texture_rect(chest_texture, Rect2(cx - 42, cy - 34, 84, 68), false)
 		else:
@@ -3083,7 +3237,7 @@ class GameWorld:
 		var target_name := String(state.get("target_name", "丘陵史萊姆"))
 		var hp := float(state.get("target_hp", 110)) / maxf(1.0, float(state.get("target_max_hp", 283)))
 		var base := HOME_ENEMY_BASE
-		draw_ellipse(base + Vector2(0, 22), 30.0, 7.0, Color("#03060b", 0.45))
+		_draw_ellipse_compat(base + Vector2(0, 22), 30.0, 7.0, Color("#03060b", 0.45))
 		if slime_texture != null:
 			draw_texture_rect(slime_texture, Rect2(base + Vector2(-42, -36), Vector2(84, 58)), false)
 		else:
@@ -3101,7 +3255,7 @@ class GameWorld:
 		var base := HOME_PLAYER_BASE
 		_draw_paper_doll_world(base, String(state.get("gender", "male")), Dictionary(state.get("equipped", {})), HOME_PLAYER_SIZE)
 		return
-		draw_ellipse(base + Vector2(0, 54), 52.0, 10.0, Color("#03060b", 0.58))
+		_draw_ellipse_compat(base + Vector2(0, 54), 52.0, 10.0, Color("#03060b", 0.58))
 		draw_polygon(PackedVector2Array([
 			base + Vector2(-58, -8),
 			base + Vector2(-24, -48),
@@ -3145,7 +3299,7 @@ class GameWorld:
 			state_textures = female_state_textures
 			animation_frames = female_animation_frames
 		var dest := Rect2(base + Vector2(-target_size.x * 0.5, -target_size.y * 0.78), target_size)
-		draw_ellipse(base + Vector2(0, target_size.y * 0.28), target_size.x * 0.25, target_size.y * 0.035, Color("#03060b", 0.45))
+		_draw_ellipse_compat(base + Vector2(0, target_size.y * 0.28), target_size.x * 0.25, target_size.y * 0.035, Color("#03060b", 0.45))
 		var animation_name := _current_animation_name()
 		var use_stable_home_pose := String(state.get("active_page", "home")) == "home"
 		var frames: Array = animation_frames.get(animation_name, [])
@@ -3173,7 +3327,7 @@ class GameWorld:
 		var cape_color := Color("#2c5b8e")
 		if String(equipped.get("accessory", "")) == "紅色披肩":
 			cape_color = Color("#9e3d50")
-		draw_ellipse(base + Vector2(0, 54), 58.0, 12.0, Color("#03060b", 0.50))
+		_draw_ellipse_compat(base + Vector2(0, 54), 58.0, 12.0, Color("#03060b", 0.50))
 		draw_polygon(PackedVector2Array([
 			base + Vector2(-52, -6),
 			base + Vector2(-88, 70),

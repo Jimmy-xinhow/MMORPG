@@ -470,3 +470,18 @@
 - No clean RC package was rebuilt and no release was published in this step.
 - Sprint status updated: RR-003 and RR-004 remain review but now block on Godot 4.4 tooling, clean RC rebuild/archive, SHA256 evidence, and RC smoke execution rather than owner decision selection.
 - Next recommended: provision Godot 4.4 tooling, then align clean RC artifact validators/package evidence and produce `v0.1.0-rc.3`.
+
+## Session Extract - Godot 4.4 tooling and local RC3 package candidate 2026-05-28
+- Workflow: CCGS `setup-engine`, `godot`, and release gate remediation adaptation.
+- Godot 4.4 tooling provisioned locally under `tools/godot-4.4/` from official Godot 4.4 stable downloads.
+- Workspace-local export templates installed under `tools/godot-4.4/appdata/Godot/export_templates/4.4.stable/`.
+- Compatibility issue found and fixed: Godot 4.4 does not accept `draw_ellipse()` in `Main.gd`; replaced with `_draw_ellipse_compat()` polygon drawing in the affected drawing classes.
+- Godot 4.4 validation passed: version `4.4.stable.official.4c311cbee`, `Main.gd` check-only parse, and project headless load.
+- Project gate passed: `npm.cmd run check` with 47 tests and UI/API/production smoke.
+- Local Godot 4.4 release export created `build/windows/BraveLegend.exe`; headless boot smoke passed.
+- Local archive created: `release-archives/brave-legend-v0.1.0-rc.3-windows-internal.zip`.
+- Evidence written:
+  - `production/releases/godot-4.4-tooling-provisioning-2026-05-28.md`
+  - `production/releases/build-provenance-v0.1.0-rc.3.md`
+- Warnings: export completed with editor cache and missing `rcedit` warnings; current RC3 archive is local only and is not yet source-tag/remote-CI/GitHub-Release provenanced.
+- Next recommended: commit/push source + required composite assets, capture remote CI, tag `v0.1.0-rc.3`, attach archive to GitHub prerelease, then run the RC smoke standard.

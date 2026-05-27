@@ -72,7 +72,7 @@ Bottom-left: 教學技能. Header text: "教學技能". Show skill tree node hig
 
 Bottom-right: 教學公會. Header text: "教學公會". Show guild hall entry highlight, donation/task/boss icons, beginner guild benefit panel, mentor tip, and next/finish button.
 
-## Next Batch Prompt
+## Completed Batch: Live Operations Expansion Prompt
 
 Create a 2x2 contact sheet matching the locked Brave Legend production UI style. Total canvas 864x1536, four complete 432x768 portrait screens, no gutters. Keep the same dark navy/black fantasy MMORPG client chrome, ornate gold frames, compact top character HUD, fixed bottom seven-icon navigation bar, blue-gold buttons, red notification badges, green progress bars, and dense mobile RPG information layout. Avoid parchment-dominant UI, admin panels, real-money, withdraw, settlement, tax, operator finance, gambling/cash-out language, copyrighted characters/logos, and watermarks.
 
@@ -86,7 +86,71 @@ Bottom-left: 限時挑戰. Header text: "限時挑戰". Show countdown timer, ro
 
 Bottom-right: 活動兌換確認. Header text: "活動兌換確認". Show confirmation modal over dark event shop, selected fantasy item, required event tokens, remaining balance, confirm/cancel buttons, and no cash-out wording.
 
+## Completed Batch: World And Character Lore Prompt
+
+Create a 2x2 contact sheet matching the locked Brave Legend production UI style. Total canvas 864x1536, four complete 432x768 portrait screens, no gutters. Keep the same dark navy/black fantasy MMORPG client chrome, ornate gold frames, compact top character HUD, fixed bottom seven-icon navigation bar, blue-gold buttons, red notification badges, green progress bars, and dense mobile RPG information layout. Avoid parchment-dominant UI, admin panels, real-money, withdraw, settlement, tax, operator finance, gambling/cash-out language, copyrighted characters/logos, and watermarks.
+
+Screen order:
+
+Top-left: 角色傳記. Header text: "角色傳記". Show character portrait, class history timeline, relationship tags, unlocked story chapters, stat lore snippets, and view chapter button.
+
+Top-right: 地區聲望. Header text: "地區聲望". Show region emblem, reputation level bar, local NPC cards, unlock rewards, daily reputation tasks, and route-to-region button.
+
+Bottom-left: 素材倉庫. Header text: "素材倉庫". Show material category tabs, dense item grid, rarity filters, source tags, selected material detail, and go-to-source button.
+
+Bottom-right: 怪物掉落表. Header text: "怪物掉落表". Show monster list, selected monster portrait, drop item rows with rarity frames, habitat/stage tags, weakness icons, and route-to-stage button.
+
+## Completed Batch: Social And Guild Depth Prompt
+
+Create a 2x2 contact sheet matching the locked Brave Legend production UI style. Total canvas 864x1536, four complete 432x768 portrait screens, no gutters. Keep the same dark navy/black fantasy MMORPG client chrome, ornate gold frames, compact top character HUD, fixed bottom seven-icon navigation bar, blue-gold buttons, red notification badges, green progress bars, and dense mobile RPG information layout. Avoid parchment-dominant UI, admin panels, real-money, withdraw, settlement, tax, operator finance, gambling/cash-out language, copyrighted characters/logos, and watermarks.
+
+Screen order:
+
+Top-left: 公會成員. Header text: "公會成員". Show guild roster rows, role badges, online/offline states, contribution points, support power, and member detail button.
+
+Top-right: 公會研究. Header text: "公會研究". Show research tree nodes, guild contribution progress, unlocked bonuses, donation material slots, and start research button.
+
+Bottom-left: 隊伍戰術. Header text: "隊伍戰術". Show party formation slots, front/back row markers, tactic presets, class synergy indicators, and save tactic button.
+
+Bottom-right: 好友支援詳情. Header text: "好友支援詳情". Show support character card, friend bond level, available assist skill, cooldown, support history, and assign support button.
+
+## Completed Batch: Combat And Progression Depth Prompt
+
+Create a 2x2 contact sheet matching the locked Brave Legend production UI style. Total canvas 864x1536, four complete 432x768 portrait screens, no gutters. Keep the same dark navy/black fantasy MMORPG client chrome, ornate gold bevel frames, compact top character HUD with chibi hero portrait, fixed right-side task/activity icons, fixed bottom seven-icon navigation bar, dense mobile RPG panels, blue-gold buttons, red notification badges, green progress bars, original anime fantasy portraits, and polished stone/metal textures. Avoid parchment-dominant UI, white/cream dominant panels, flat admin dashboards, real-money, buy premium, withdraw, settlement, tax, operator finance, gambling/cash-out language, copyrighted characters/logos, and watermarks.
+
+Screen order:
+
+Top-left: 職業專精. Header text: "職業專精". Show class emblem, current specialization path, passive node grid, class trial progress, recommended stat tags, and confirm specialization button.
+
+Top-right: 符文配置. Header text: "符文配置". Show rune socket board, elemental rune icons, set bonus rows, power preview, material requirement row, and save configuration button.
+
+Bottom-left: 副本準備. Header text: "副本準備". Show dungeon banner, enemy warning icons, party readiness checklist, consumable slots, recommended power, and enter dungeon button.
+
+Bottom-right: 掉落結算詳情. Header text: "掉落結算詳情". Show battle reward list, rarity-framed item drops, contribution score, MVP badge, EXP/material totals, and collect rewards button.
+
+## Next Batch Prompt
+
+Create a 2x2 contact sheet matching the locked Brave Legend production UI style. Total canvas 864x1536, four complete 432x768 portrait screens, no gutters. Keep the same dark navy/black fantasy MMORPG client chrome, ornate gold bevel frames, compact top character HUD with chibi hero portrait, fixed right-side task/activity icons, fixed bottom seven-icon navigation bar, dense mobile RPG item panels, blue-gold buttons, red notification badges, green progress bars, original anime fantasy portraits, and polished stone/metal textures. Avoid parchment-dominant UI, white/cream dominant panels, flat admin dashboards, real-money, buy premium, withdraw, settlement, tax, operator finance, gambling/cash-out language, copyrighted characters/logos, and watermarks.
+
+Screen order:
+
+Top-left: 交易搜尋. Header text: "交易搜尋". Show search field, rarity and category filters, RPG item listing rows, seller avatar badges, power preview, and item detail button.
+
+Top-right: 上架確認. Header text: "上架確認". Show selected item card, quantity stepper, listing duration, gameplay currency preview, confirmation warnings, cancel button, and confirm listing button.
+
+Bottom-left: 道具分解. Header text: "道具分解". Show selected equipment grid, rarity warning tags, material return preview, batch select toggle, and decompose button.
+
+Bottom-right: 倉庫整理. Header text: "倉庫整理". Show warehouse tabs, dense storage item grid, auto-sort controls, lock/favorite states, selected item detail, and move-to-bag button.
+
 ## Later Page Prompts
+
+### Batch: Settings And Account Depth
+
+Create a 2x2 contact sheet matching the locked Brave Legend production UI style. Screens: 通知設定, 資料下載, 裝置管理, 客服對話. Use player-account safety language, toggle rows, device cards, support chat panels, blue-gold buttons, compact mobile layout, and no admin dashboard or financial operations wording.
+
+### Batch: Community And Chat Depth
+
+Create a 2x2 contact sheet matching the locked Brave Legend production UI style. Screens: 公會公告, 組隊邀請詳情, 好友名片, 聊天檢舉確認. Use guild bulletin panels, invite cards, social badges, report confirmation modal, player-friendly moderation wording, and no external platform branding.
 
 ### Batch: Collection Expansion
 

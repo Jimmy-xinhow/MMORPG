@@ -42,8 +42,8 @@ stories:
     status: review
     owner: "Technical Director + Godot Specialist"
     estimate_days: 1.0
-    blocker: "ADR-0002 accepted; awaiting Godot 4.4 tooling/provisioning and clean RC validation evidence"
-    completed: "ADR accepted at docs/architecture/adr-0002-godot-release-version-strategy.md; decision package updated at production/releases/clean-rc-decision-package-0.1.0.md"
+    blocker: "Godot 4.4 tooling provisioned locally and compatibility validation passed; awaiting source commit/tag, remote CI, and clean RC validation evidence"
+    completed: "ADR accepted at docs/architecture/adr-0002-godot-release-version-strategy.md; Godot 4.4 tooling evidence created at production/releases/godot-4.4-tooling-provisioning-2026-05-28.md"
   - id: "RR-004"
     name: "Define release artifact policy"
     file: "production/sprints/sprint-release-remediation-001.md"
@@ -51,8 +51,8 @@ stories:
     status: review
     owner: "Release Manager + Technical Director"
     estimate_days: 1.0
-    blocker: "Source/artifact policy accepted; awaiting clean RC package rebuild, GitHub Release attachment upload, and archive SHA256 evidence"
-    completed: "Policy accepted at production/releases/release-artifact-policy-0.1.0.md; .gitignore generated-output policy applied; decision package updated at production/releases/clean-rc-decision-package-0.1.0.md"
+    blocker: "Local Godot 4.4 RC archive and SHA256 evidence exist; awaiting source tag provenance, GitHub Release attachment upload, and RC smoke evidence"
+    completed: "Policy accepted at production/releases/release-artifact-policy-0.1.0.md; local RC3 candidate provenance created at production/releases/build-provenance-v0.1.0-rc.3.md"
   - id: "RR-005"
     name: "Create release QA plan for remediation evidence"
     file: "production/sprints/sprint-release-remediation-001.md"
@@ -114,8 +114,8 @@ stories:
     status: review
     owner: "QA Lead + Release Manager"
     estimate_days: 0.5
-    blocker: "Source/CI provenance and source artifact policy exist; awaiting Godot 4.4 tooling, clean RC package rebuild/archive, and first clean RC smoke execution"
-    completed: "Smoke standard created at production/qa/release-candidate-smoke-standard-0.1.0.md"
+    blocker: "Local Godot 4.4 package boot smoke passed; awaiting source-provenanced RC archive, GitHub Release attachment, and full RC smoke-standard execution"
+    completed: "Smoke standard created at production/qa/release-candidate-smoke-standard-0.1.0.md; local RC3 package candidate recorded at production/releases/build-provenance-v0.1.0-rc.3.md"
   - id: "RR-012"
     name: "Prepare three playtest report templates"
     file: "production/sprints/sprint-release-remediation-001.md"

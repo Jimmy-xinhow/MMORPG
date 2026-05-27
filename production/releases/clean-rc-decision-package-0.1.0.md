@@ -216,13 +216,13 @@ release-archives/
 
 After this source-policy application, the next implementation stage is:
 
-1. Provision accepted Godot 4.4 tooling.
-2. Align clean RC artifact naming in validators, package docs, smoke standard, and future provenance.
-3. Rebuild a clean RC package from the accepted tag.
-4. Create and checksum the release archive.
-5. Push a successor tag, expected `v0.1.0-rc.3`.
-6. Run remote CI and local RC smoke.
-7. Update build provenance and release gate report.
+1. Provision accepted Godot 4.4 tooling. **Complete with warnings**: see `production/releases/godot-4.4-tooling-provisioning-2026-05-28.md`.
+2. Align clean RC artifact naming in validators, package docs, smoke standard, and future provenance. **Partially complete locally**: `BraveLegend.exe` package candidate exists; source commit/tag is pending.
+3. Rebuild a clean RC package from the accepted tag. **Pending**: current archive is a local candidate, not tag-provenanced.
+4. Create and checksum the release archive. **Complete locally**: see `production/releases/build-provenance-v0.1.0-rc.3.md`.
+5. Push a successor tag, expected `v0.1.0-rc.3`. **Pending**.
+6. Run remote CI and local RC smoke. **Local smoke complete; remote CI pending**.
+7. Update build provenance and release gate report. **Build provenance updated; release gate re-run pending**.
 
 ---
 
@@ -237,9 +237,9 @@ This decision package is ready for owner review when:
 - [x] Post-approval file changes are listed.
 - [x] Owners select or revise each decision.
 - [x] Approved source-policy decisions are applied in source.
-- [ ] Accepted Godot 4.4 tooling is provisioned.
-- [ ] Clean RC artifact naming is applied to generated package evidence.
-- [ ] Clean RC package is rebuilt or validated.
+- [x] Accepted Godot 4.4 tooling is provisioned.
+- [x] Clean RC artifact naming is applied to generated package evidence.
+- [ ] Clean RC package is rebuilt or validated from a pushed source tag.
 
 ---
 
@@ -247,4 +247,4 @@ This decision package is ready for owner review when:
 
 **Decision readiness**: APPLIED FOR SOURCE POLICY.
 
-**Clean RC package readiness**: BLOCKED until Godot 4.4 tooling is provisioned and a clean package is rebuilt or validated.
+**Clean RC package readiness**: PARTIAL LOCAL CANDIDATE. Blocked until source commit/tag, remote CI, release attachment, and RC smoke evidence are complete.

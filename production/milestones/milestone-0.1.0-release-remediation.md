@@ -86,8 +86,8 @@ The current store/legal checklist keeps public PC, Steam, Apple App Store, and G
 | --- | --- | --- | --- |
 | RR-001 | Establish source-control provenance plan | Review | Required decision artifact. |
 | RR-002 | Capture remote CI evidence path | Review | Remote CI evidence is captured; QA Lead sign-off remains. |
-| RR-003 | Resolve Godot version strategy | Review | Required technical release decision. |
-| RR-004 | Define release artifact policy | Review | Required artifact/archive/checksum policy. |
+| RR-003 | Resolve Godot version strategy | Review | Godot 4.4 tooling is provisioned locally; source-provenanced clean RC validation remains pending. |
+| RR-004 | Define release artifact policy | Review | Local RC archive/checksum evidence exists; GitHub Release attachment and tag provenance remain pending. |
 | RR-005 | Create release QA plan for remediation evidence | Review | QA plan artifact exists and sprint status metadata is reconciled; awaiting QA Lead sign-off. |
 | RR-006 | Produce performance, soak, and memory profiling protocol | Review | Planning complete; execution still required. |
 | RR-007 | Produce localization gap report | Review | Planning complete; owner decisions required. |
@@ -181,6 +181,7 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Release checklist | NO-GO for clean release | `production/releases/release-checklist-0.1.0-internal-2026-05-27.md` |
 | Source provenance plan | Review | `production/releases/source-control-provenance-0.1.0.md` |
 | Godot version ADR | Accepted | `docs/architecture/adr-0002-godot-release-version-strategy.md` |
+| Godot 4.4 tooling provisioning | Pass with warnings | `production/releases/godot-4.4-tooling-provisioning-2026-05-28.md` |
 | Artifact policy | Accepted for source/artifact policy; clean RC execution pending | `production/releases/release-artifact-policy-0.1.0.md` |
 | Sprint QA plan | Review | `production/qa/qa-plan-sprint-release-remediation-001.md` |
 | Performance/soak protocol | Protocol only | `production/qa/performance-soak-memory-protocol-2026-05-27.md` |
@@ -189,7 +190,8 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Store/legal/distribution checklist | Review | `production/releases/store-legal-distribution-checklist-0.1.0.md` |
 | Remote CI evidence | Pass / review | `production/qa/evidence/ci-evidence-release-remediation-001.md` |
 | Build provenance | Source/CI pass; clean RC not ready | `production/releases/build-provenance-v0.1.0-rc.2.md` |
-| Clean RC decision package | Source-policy decisions applied; package execution pending | `production/releases/clean-rc-decision-package-0.1.0.md` |
+| Clean RC decision package | Local RC candidate produced; source tag/release attachment pending | `production/releases/clean-rc-decision-package-0.1.0.md` |
+| RC3 local package candidate | Pass with warnings / not source-provenanced | `production/releases/build-provenance-v0.1.0-rc.3.md` |
 | RC smoke standard | Defined / review | `production/qa/release-candidate-smoke-standard-0.1.0.md` |
 | Playtest templates | Defined / review | `production/playtests/RR-012-template-index.md` |
 | Patch notes/changelog requirements | Defined / review | `production/releases/patch-notes-changelog-requirements-0.1.0.md` |
@@ -223,8 +225,8 @@ Rationale:
 | 4 | Get QA Lead and Creative Director review for RR-012 playtest templates. | QA Lead + Creative Director | Next owner review |
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
 | 6 | Run real soak/performance/memory execution. | QA Lead + Performance Analyst | Before release gate re-run |
-| 7 | Provision Godot 4.4 tooling for clean RC validation. | Technical Director + Release Manager | Before RC package build |
-| 8 | Apply clean RC artifact naming to validators/package evidence and rebuild the first clean RC package. | Technical Director + Release Manager | Before RC smoke |
+| 7 | Commit/push Godot 4.4 compatibility, validator, and required composite asset updates; capture remote CI. | Technical Director + Release Manager | Before RC tag |
+| 8 | Tag `v0.1.0-rc.3`, re-verify/archive the Godot 4.4 package, and attach it to a GitHub prerelease. | Release Manager | Before RC smoke |
 
 ---
 
