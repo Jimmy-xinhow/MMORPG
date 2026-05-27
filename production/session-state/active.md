@@ -424,3 +424,15 @@
 - RR-002 evidence path initialized at `production/qa/evidence/ci-evidence-release-remediation-001.md`.
 - Sprint status updated: RR-001 remains review pending commit/tag/push/sign-off; RR-002 moved to in-progress pending first push and GitHub Actions success.
 - Next recommended: create baseline commit/tag, push `main` and `v0.1.0-rc.1`, then capture GitHub Actions run evidence.
+
+## Session Extract - RR-002 remote CI evidence captured 2026-05-28
+- Workflow: CCGS source-control provenance plus GitHub Actions CI fix.
+- Baseline commit pushed: `84808c33d7ba7e1f4593baae28456d67d7a66506`.
+- Baseline tag pushed: `v0.1.0-rc.1`.
+- First GitHub Actions run failed: `26526358889`, because `scripts/validate-goal-seven.mjs` required generated Windows export artifacts in a clean CI checkout while RR-004 policy excludes those artifacts from git by default.
+- CI validator fix committed: `56d8c36a43f7099a3678cee4273c3313883dbdfe`, preserving local Windows artifact checks while allowing GitHub Actions to validate release artifact policy and RR-002 evidence.
+- Successful GitHub Actions run captured: `26526574962`, workflow `Tests`, job `Project check`, command `npm run check`, conclusion `success`.
+- Successor tag pushed: `v0.1.0-rc.2`, pointing to the CI-passing commit.
+- Evidence updated: `production/qa/evidence/ci-evidence-release-remediation-001.md` and `production/releases/source-control-provenance-0.1.0.md`.
+- Sprint status updated: RR-002 moved to review, awaiting QA Lead sign-off; RR-001 remains review, awaiting Producer/Release Manager sign-off.
+- Next recommended: create full build provenance for `v0.1.0-rc.2`, then run release/gate checklist review against the updated CI evidence.

@@ -24,17 +24,17 @@ stories:
     status: review
     owner: "Producer + Release Manager"
     estimate_days: 1.0
-    blocker: "Existing remote route selected and local git initialized; awaiting baseline commit/tag push, RR-002 CI evidence, and Producer/Release Manager sign-off"
+    blocker: "Existing remote route selected, baseline commit/tag pushed, successor RC tag pushed after CI pass; awaiting Producer/Release Manager sign-off"
     completed: "Evidence artifact updated at production/releases/source-control-provenance-0.1.0.md"
   - id: "RR-002"
     name: "Capture remote CI evidence path"
     file: "production/sprints/sprint-release-remediation-001.md"
     priority: must-have
-    status: in-progress
+    status: review
     owner: "DevOps Engineer + QA Lead"
     estimate_days: 0.75
-    blocker: "Awaiting first push to origin and successful GitHub Actions run"
-    completed: "Evidence path initialized at production/qa/evidence/ci-evidence-release-remediation-001.md"
+    blocker: "Remote GitHub Actions run passed; awaiting QA Lead sign-off"
+    completed: "Remote CI evidence captured at production/qa/evidence/ci-evidence-release-remediation-001.md"
   - id: "RR-003"
     name: "Resolve Godot version strategy"
     file: "production/sprints/sprint-release-remediation-001.md"

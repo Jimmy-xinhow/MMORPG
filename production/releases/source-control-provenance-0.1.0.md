@@ -3,7 +3,7 @@
 **Date**: 2026-05-27
 **Workflow Context**: Release Remediation Sprint 001 / RR-001
 **Owners**: Producer, Release Manager
-**Status**: Existing remote route selected; local repo initialized
+**Status**: Existing remote route implemented; remote CI evidence captured
 
 ---
 
@@ -25,6 +25,11 @@ This plan does not initialize git, create commits, create tags, or connect a rem
 | Remote history | Empty after fetch | `git fetch origin` succeeded; `git branch -r` returned no remote branches |
 | Local branch | `main` | `git branch -M main` completed after safe-directory setup |
 | CI workflow file | Present | `.github/workflows/tests.yml` |
+| Baseline commit | Pushed | `84808c33d7ba7e1f4593baae28456d67d7a66506` |
+| Baseline tag | Pushed | `v0.1.0-rc.1`; retained as failed CI evidence |
+| CI-passing commit | Pushed | `56d8c36a43f7099a3678cee4273c3313883dbdfe` |
+| CI-passing tag | Pushed | `v0.1.0-rc.2`; successor RC tag for the CI-passing commit |
+| Remote CI evidence | PASS | GitHub Actions run `26526574962` passed: `https://github.com/Jimmy-xinhow/MMORPG/actions/runs/26526574962` |
 | Primary local gate | Present | `npm.cmd run check` |
 | Lockfile | Not present | No `package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`, or `bun.lockb` found |
 | Windows internal artifacts | Present | `build/windows/LuckyPackMMORPG.exe`, console wrapper, launcher, README |
@@ -34,7 +39,7 @@ This plan does not initialize git, create commits, create tags, or connect a rem
 
 ## Required Owner Decision
 
-The source-control route has been selected. RR-002 remote CI evidence can proceed after the baseline commit/tag is pushed and a GitHub Actions run is available.
+The source-control route has been selected and implemented. RR-002 remote CI evidence is captured and now awaits QA Lead sign-off.
 
 ### Option A - Connect to Existing Remote
 
@@ -215,7 +220,7 @@ Then reconcile local files against the remote branch before committing. Do not p
 
 ## QA Acceptance Mapping
 
-This plan satisfies RR-001 when:
+This plan satisfies RR-001 source-control execution criteria when:
 
 - [x] It names current source-control state.
 - [x] It defines repo-source options.
@@ -223,6 +228,9 @@ This plan satisfies RR-001 when:
 - [x] It identifies generated outputs that need ignore/archive decisions.
 - [x] It defines build provenance fields.
 - [x] Owner selects existing remote or new repository path.
+- [x] Baseline commit is pushed to `main`.
+- [x] Release-candidate tag is pushed.
+- [x] Remote CI evidence is captured for the selected repository.
 - [ ] Producer and Release Manager sign-off is recorded.
 
 ---
@@ -231,9 +239,9 @@ This plan satisfies RR-001 when:
 
 This plan partially resolves the release blocker: "No reproducible build evidence from commit/tag."
 
-The source-control route is now selected and initialized locally. Remaining actions:
+The source-control route is now selected, initialized, pushed, tagged, and validated by remote CI. Remaining actions:
 
-1. Create baseline commit and tag.
-2. Push `main` and `v0.1.0-rc.1` to the selected remote.
-3. Capture RR-002 GitHub Actions evidence.
-4. Record final commit/tag/CI evidence in a build provenance record.
+1. Record Producer and Release Manager sign-off.
+2. Record QA Lead sign-off for RR-002.
+3. Create the full build provenance record for `v0.1.0-rc.2`.
+4. Decide final artifact archive/release attachment storage under RR-004.
