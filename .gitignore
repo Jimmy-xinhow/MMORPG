@@ -1,3 +1,8 @@
 node_modules/
 tmp/
 *.log
+godot-client/.godot/
+**/__pycache__/
+build/windows/
+build/internal-test/
+release-archives/

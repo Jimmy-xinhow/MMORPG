@@ -42,8 +42,8 @@ stories:
     status: review
     owner: "Technical Director + Godot Specialist"
     estimate_days: 1.0
-    blocker: "Decision package recommends accepting ADR-0002 and requiring Godot 4.4 for clean RC; awaiting owner/Technical Director selection"
-    completed: "Proposed ADR created at docs/architecture/adr-0002-godot-release-version-strategy.md; decision package created at production/releases/clean-rc-decision-package-0.1.0.md"
+    blocker: "ADR-0002 accepted; awaiting Godot 4.4 tooling/provisioning and clean RC validation evidence"
+    completed: "ADR accepted at docs/architecture/adr-0002-godot-release-version-strategy.md; decision package updated at production/releases/clean-rc-decision-package-0.1.0.md"
   - id: "RR-004"
     name: "Define release artifact policy"
     file: "production/sprints/sprint-release-remediation-001.md"
@@ -51,8 +51,8 @@ stories:
     status: review
     owner: "Release Manager + Technical Director"
     estimate_days: 1.0
-    blocker: "Decision package recommends BraveLegend naming, GitHub Release artifact storage, and generated-output .gitignore policy; awaiting owner selection/sign-off"
-    completed: "Proposed policy created at production/releases/release-artifact-policy-0.1.0.md; provenance record created at production/releases/build-provenance-v0.1.0-rc.2.md; decision package created at production/releases/clean-rc-decision-package-0.1.0.md"
+    blocker: "Source/artifact policy accepted; awaiting clean RC package rebuild, GitHub Release attachment upload, and archive SHA256 evidence"
+    completed: "Policy accepted at production/releases/release-artifact-policy-0.1.0.md; .gitignore generated-output policy applied; decision package updated at production/releases/clean-rc-decision-package-0.1.0.md"
   - id: "RR-005"
     name: "Create release QA plan for remediation evidence"
     file: "production/sprints/sprint-release-remediation-001.md"
@@ -114,7 +114,7 @@ stories:
     status: review
     owner: "QA Lead + Release Manager"
     estimate_days: 0.5
-    blocker: "Source/CI provenance now exists; awaiting QA Lead/Release Manager acceptance, RR-004 owner acceptance, ADR-0002 decision, artifact naming/archive decisions, and first clean RC execution"
+    blocker: "Source/CI provenance and source artifact policy exist; awaiting Godot 4.4 tooling, clean RC package rebuild/archive, and first clean RC smoke execution"
     completed: "Smoke standard created at production/qa/release-candidate-smoke-standard-0.1.0.md"
   - id: "RR-012"
     name: "Prepare three playtest report templates"

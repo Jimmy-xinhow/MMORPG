@@ -180,8 +180,8 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Smoke report | Pass with warnings | `production/qa/smoke-2026-05-27.md` |
 | Release checklist | NO-GO for clean release | `production/releases/release-checklist-0.1.0-internal-2026-05-27.md` |
 | Source provenance plan | Review | `production/releases/source-control-provenance-0.1.0.md` |
-| Godot version ADR | Proposed | `docs/architecture/adr-0002-godot-release-version-strategy.md` |
-| Artifact policy | Proposed | `production/releases/release-artifact-policy-0.1.0.md` |
+| Godot version ADR | Accepted | `docs/architecture/adr-0002-godot-release-version-strategy.md` |
+| Artifact policy | Accepted for source/artifact policy; clean RC execution pending | `production/releases/release-artifact-policy-0.1.0.md` |
 | Sprint QA plan | Review | `production/qa/qa-plan-sprint-release-remediation-001.md` |
 | Performance/soak protocol | Protocol only | `production/qa/performance-soak-memory-protocol-2026-05-27.md` |
 | Localization gap report | Review | `production/localization/localization-gap-report-2026-05-27.md` |
@@ -189,7 +189,7 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Store/legal/distribution checklist | Review | `production/releases/store-legal-distribution-checklist-0.1.0.md` |
 | Remote CI evidence | Pass / review | `production/qa/evidence/ci-evidence-release-remediation-001.md` |
 | Build provenance | Source/CI pass; clean RC not ready | `production/releases/build-provenance-v0.1.0-rc.2.md` |
-| Clean RC decision package | Ready for owner review | `production/releases/clean-rc-decision-package-0.1.0.md` |
+| Clean RC decision package | Source-policy decisions applied; package execution pending | `production/releases/clean-rc-decision-package-0.1.0.md` |
 | RC smoke standard | Defined / review | `production/qa/release-candidate-smoke-standard-0.1.0.md` |
 | Playtest templates | Defined / review | `production/playtests/RR-012-template-index.md` |
 | Patch notes/changelog requirements | Defined / review | `production/releases/patch-notes-changelog-requirements-0.1.0.md` |
@@ -223,8 +223,8 @@ Rationale:
 | 4 | Get QA Lead and Creative Director review for RR-012 playtest templates. | QA Lead + Creative Director | Next owner review |
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
 | 6 | Run real soak/performance/memory execution. | QA Lead + Performance Analyst | Before release gate re-run |
-| 7 | Review and approve the clean RC decision package: Godot version, artifact naming, archive target, and `.gitignore` policy. | Technical Director + Release Manager + Producer | Before RC smoke |
-| 8 | Update or supersede release checklist with current remediation state. | Release Manager | Before next gate re-run |
+| 7 | Provision Godot 4.4 tooling for clean RC validation. | Technical Director + Release Manager | Before RC package build |
+| 8 | Apply clean RC artifact naming to validators/package evidence and rebuild the first clean RC package. | Technical Director + Release Manager | Before RC smoke |
 
 ---
 

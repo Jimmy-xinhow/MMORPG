@@ -74,8 +74,8 @@ Additional branch-tip verification after evidence documentation:
 | Target source | `.claude/docs/technical-preferences.md`, `docs/engine-reference/godot/VERSION.md`, `godot-client/project.godot` |
 | Local executable used for current internal artifacts | `tools/godot-4.6.3/Godot_v4.6.3-stable_win64_console.exe` |
 | Local executable version | `4.6.3.stable.official.7d41c59c4` |
-| Version strategy status | ADR-0002 is Proposed, not Accepted |
-| Clean RC effect | BLOCKED until Godot 4.4 evidence exists or an accepted upgrade ADR supersedes ADR-0002 |
+| Version strategy status | ADR-0002 is Accepted |
+| Clean RC effect | BLOCKED until Godot 4.4 tooling is provisioned and clean RC evidence exists |
 
 ---
 
@@ -112,10 +112,10 @@ These files are current internal debug package artifacts. They are useful for ow
 ## Known Warnings
 
 1. `v0.1.0-rc.2` is a CI-passing source tag, not a clean package approval.
-2. The local Windows artifacts were generated with Godot 4.6.3 while the project target remains Godot 4.4.
-3. ADR-0002 is still Proposed and needs owner/Technical Director acceptance or supersession.
-4. Release artifact storage is not selected; no GitHub Release attachment or external archive exists.
-5. `BraveLegend` and `LuckyPackMMORPG` naming is inconsistent across export preset, package script, launcher, README, and current artifacts.
+2. The local Windows artifacts were generated with Godot 4.6.3 while the accepted clean RC target remains Godot 4.4.
+3. Godot 4.4 tooling has not yet been provisioned for clean RC validation.
+4. Release artifact storage is selected as GitHub Release attachment, but no clean RC archive has been uploaded yet.
+5. `BraveLegend` is selected for future clean RC artifacts, while current internal debug artifacts still use `LuckyPackMMORPG`.
 6. The current artifacts are not committed to git by policy and are not tied to a clean RC archive.
 7. Soak/performance/memory execution evidence is not yet available.
 8. Store/legal/distribution, crash reporting, rollback, support/on-call, and localization decisions remain incomplete.
@@ -138,4 +138,4 @@ For private internal Windows testing only, the existing QA sign-off accepts warn
 
 **Clean release candidate package provenance**: NOT READY.
 
-The next release evidence step is to resolve ADR-0002, artifact naming, archive storage, and owner sign-offs, then rebuild or revalidate a package from the accepted tag under the release artifact policy.
+The next release evidence step is to provision Godot 4.4, apply clean RC artifact naming to generated package evidence, then rebuild or revalidate a package from the accepted tag under the release artifact policy.

@@ -460,3 +460,13 @@
 - No source code, ADR status, `.gitignore`, build artifacts, or release tags were changed in this step.
 - Sprint status updated: RR-003 and RR-004 now point to the decision package and await owner selection/sign-off.
 - Next recommended: owner selects/approves decisions, then implement naming/.gitignore/accepted-version changes and produce the first clean RC package.
+
+## Session Extract - Clean RC source-policy application 2026-05-28
+- Workflow: CCGS architecture-decision plus release artifact policy application.
+- ADR-0002 updated to `Accepted`; clean release validation remains pinned to Godot 4.4.
+- `.gitignore` updated to exclude generated outputs: `godot-client/.godot/`, `**/__pycache__/`, `build/windows/`, `build/internal-test/`, and `release-archives/`.
+- Release artifact policy updated to accepted source/artifact policy with future clean RC naming set to Brave Legend / `BraveLegend` and storage set to GitHub Release attachment.
+- Build provenance updated: `v0.1.0-rc.2` remains source/CI provenance only, not a clean RC package.
+- No clean RC package was rebuilt and no release was published in this step.
+- Sprint status updated: RR-003 and RR-004 remain review but now block on Godot 4.4 tooling, clean RC rebuild/archive, SHA256 evidence, and RC smoke execution rather than owner decision selection.
+- Next recommended: provision Godot 4.4 tooling, then align clean RC artifact validators/package evidence and produce `v0.1.0-rc.3`.

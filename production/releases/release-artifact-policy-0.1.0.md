@@ -3,7 +3,7 @@
 **Date**: 2026-05-27
 **Workflow Context**: Release Remediation Sprint 001 / RR-004
 **Owners**: Release Manager, Technical Director
-**Status**: Proposed, pending RR-001 and ADR-0002 acceptance
+**Status**: Accepted for source/artifact policy; clean RC execution pending
 
 ---
 
@@ -35,8 +35,8 @@ Current `build/windows/*` files remain valid internal-test artifacts, but they a
 
 | Input | Status | Notes |
 | --- | --- | --- |
-| RR-001 source-control provenance plan | Review | `production/releases/source-control-provenance-0.1.0.md` |
-| ADR-0002 Godot release version strategy | Proposed | `docs/architecture/adr-0002-godot-release-version-strategy.md` |
+| RR-001 source-control provenance plan | Review / implemented route | `production/releases/source-control-provenance-0.1.0.md` |
+| ADR-0002 Godot release version strategy | Accepted | `docs/architecture/adr-0002-godot-release-version-strategy.md` |
 | Existing release checklist | NO-GO for clean release | `production/releases/release-checklist-0.1.0-internal-2026-05-27.md` |
 | Current smoke report | PASS WITH WARNINGS | `production/qa/smoke-2026-05-27.md` |
 | Export preset | Present | `godot-client/export_presets.cfg`, preset `Windows Desktop` |
@@ -138,18 +138,19 @@ Do not commit generated outputs by default:
 
 If owners decide to version generated build artifacts, that must be recorded as a specific exception in this policy or a superseding policy.
 
-### Required `.gitignore` Update Before First Release Candidate Commit
+### Applied `.gitignore` Generated Output Policy
 
-After owner approval, update `.gitignore` to include:
+After owner approval through `production/releases/clean-rc-decision-package-0.1.0.md`, `.gitignore` includes:
 
 ```text
 godot-client/.godot/
 **/__pycache__/
 build/windows/
 build/internal-test/
+release-archives/
 ```
 
-Do not apply this change until the source-control route and artifact storage decision are approved.
+Generated Windows build outputs, Godot cache, Python cache, and local release archive staging are excluded from source control by default.
 
 ---
 
@@ -177,13 +178,24 @@ Before any release candidate package is produced, owners must choose one product
 - Release archive name.
 - Build provenance record.
 
+Selected convention for future clean RC packages:
+
+| Field | Selected Value |
+| --- | --- |
+| Product/display name | Brave Legend |
+| Windows executable stem | `BraveLegend` |
+| Launcher stem | `Play-Brave-Legend-Online` |
+| Archive stem | `brave-legend` |
+
+Historical evidence may keep `LuckyPackMMORPG` names when describing the already-captured internal debug package.
+
 ### Recommended Archive Naming
 
 Use ASCII archive names for release files:
 
 ```text
-lucky-pack-mmorpg-v0.1.0-rc.1-windows-internal.zip
-lucky-pack-mmorpg-v0.1.0-internal.1-windows.zip
+brave-legend-v0.1.0-rc.3-windows-internal.zip
+brave-legend-v0.1.0-internal.1-windows.zip
 ```
 
 If the product-facing display name remains localized, keep localized naming inside product metadata, not release archive filenames.
@@ -303,16 +315,16 @@ Required fields:
 
 Preferred storage for 0.1.0 release candidates:
 
-1. GitHub Release attachment, once a remote repository exists.
-2. If no remote repository exists yet, a local archive path under a non-source-controlled release archive directory.
+1. GitHub Release attachment on a successor RC tag.
+2. Local `release-archives/` staging only as temporary preparation before upload.
 
-Recommended local archive path while remote is pending:
+Recommended local staging path:
 
 ```text
-release-archives/v0.1.0-rc.1/
+release-archives/v0.1.0-rc.3/
 ```
 
-If this local path is used, add it to `.gitignore` unless owners explicitly choose to version archives.
+`release-archives/` is ignored by git. Do not commit local archives unless a superseding policy explicitly approves versioned generated artifacts.
 
 ---
 
@@ -326,11 +338,14 @@ RR-004 is ready for owner sign-off when:
 - [x] Policy defines build provenance fields.
 - [x] Policy records current internal-test artifact inventory and checksums.
 - [x] Policy identifies naming inconsistency between `BraveLegend` config/scripts and `LuckyPackMMORPG` current artifacts.
-- [ ] RR-001 source-control route is accepted.
-- [ ] ADR-0002 is accepted or superseded.
-- [ ] Owners choose final product/artifact naming convention.
-- [ ] `.gitignore` update is approved.
-- [ ] Release candidate storage target is approved.
+- [x] RR-001 source-control route is accepted.
+- [x] ADR-0002 is accepted or superseded.
+- [x] Owners choose final product/artifact naming convention.
+- [x] `.gitignore` update is approved.
+- [x] Release candidate storage target is approved.
+- [ ] Godot 4.4 tooling is provisioned for clean RC validation.
+- [ ] Clean RC artifact is rebuilt or validated from a tagged source.
+- [ ] Clean RC archive and SHA256 are recorded.
 
 ---
 
@@ -340,9 +355,8 @@ This policy reduces the artifact-policy blocker to concrete owner decisions and 
 
 It does not fully resolve the clean release blocker until:
 
-1. Source control route and tag exist.
-2. Godot version strategy is accepted.
-3. Naming is consistent.
-4. A release candidate is rebuilt or validated from the tagged source.
-5. SHA256 checksums and provenance record are captured.
-6. Remote CI evidence exists.
+1. Godot 4.4 tooling is provisioned.
+2. Naming is applied to the generated clean RC package.
+3. A release candidate is rebuilt or validated from the tagged source.
+4. SHA256 checksums and provenance record are captured for the archive.
+5. Remote CI evidence is linked to the successor RC tag.

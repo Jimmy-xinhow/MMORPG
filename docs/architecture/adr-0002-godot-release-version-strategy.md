@@ -2,7 +2,9 @@
 
 ## Status
 
-Proposed
+Accepted
+
+Accepted on 2026-05-28 through the clean RC decision package. Clean release candidate validation remains pinned to Godot 4.4; Godot 4.6.3 remains an internal-test exception unless a later accepted ADR supersedes this decision.
 
 ## Date
 
@@ -33,8 +35,8 @@ Because these references are missing, this ADR avoids any new Godot API claims a
 | --- | --- |
 | **Depends On** | ADR-0001 |
 | **Enables** | RR-004 Release Artifact Policy, RR-011 Release Candidate Smoke Standard |
-| **Blocks** | Clean release candidate packaging until Accepted or superseded |
-| **Ordering Note** | Resolve this ADR before rebuilding or claiming a clean release candidate package. |
+| **Blocks** | Clean release candidate packaging until Godot 4.4 is provisioned and validated, or until a later accepted ADR supersedes this decision |
+| **Ordering Note** | Rebuild or validate the next clean release candidate package with Godot 4.4 evidence before claiming clean RC readiness. |
 
 ## Context
 
