@@ -506,3 +506,25 @@
   - `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md`
   - `production/releases/known-issues-0.1.0-internal.md`
 - Remaining clean RC blockers: visible-window feature-page RC smoke, bottom-navigation RC click-through, restricted-workflow review from the RC archive, `rcedit` metadata warning decision, and release gate re-check.
+
+## Session Extract - RC3 visible smoke and restricted workflow review 2026-05-28
+- Workflow: CCGS `smoke-check`, `test-evidence-review`, and Godot archive-smoke adaptation.
+- Package tested: extracted `v0.1.0-rc.3` Windows archive at `tmp/rc-smoke-v0.1.0-rc.3-20260528/BraveLegend.exe`.
+- Temporary automation: `tmp/rc3-visible-smoke.ps1` launched the RC archive, calibrated the Windows client area to 432x768, captured feature-page screenshots, then clicked each bottom-navigation target and captured post-navigation screenshots.
+- Evidence written:
+  - `production/qa/evidence/rc3-feature-page-visible-qa-2026-05-28.md`
+  - `production/qa/evidence/rc3-bottom-nav-clickthrough-qa-2026-05-28.md`
+  - `production/qa/evidence/rc3-restricted-workflow-player-visible-review-2026-05-28.md`
+  - `production/qa/evidence/rc3-visible-smoke-2026-05-28/`
+- Results:
+  - Feature-page visible QA: PASS WITH NOTES for home, role, packs, market, challenge, guild, and system.
+  - Bottom-navigation click-through: PASS using accepted `rc3-nav-post-*` evidence.
+  - Restricted-workflow review: PASS WITH NOTES; no player-visible withdrawal, tax, payout, disbursement, admin/operator center, or operator-settlement workflow found.
+- Updated artifacts:
+  - `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md`
+  - `production/releases/build-provenance-v0.1.0-rc.3.md`
+  - `production/releases/known-issues-0.1.0-internal.md`
+  - `production/releases/clean-rc-decision-package-0.1.0.md`
+  - `production/sprint-status.yaml`
+  - `production/milestones/milestone-0.1.0-release-remediation.md`
+- Remaining clean release blockers: `rcedit` metadata decision, soak/performance/memory execution, store/legal/distribution, localization, crash reporting, rollback, support/on-call, owner sign-offs, and release gate re-check.

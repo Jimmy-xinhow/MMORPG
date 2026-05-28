@@ -1,0 +1,86 @@
+﻿[
+    {
+        "Type":  "feature",
+        "Page":  "home",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-feature-home-2026-05-28.png"
+    },
+    {
+        "Type":  "feature",
+        "Page":  "role",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-feature-role-2026-05-28.png"
+    },
+    {
+        "Type":  "feature",
+        "Page":  "packs",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-feature-packs-2026-05-28.png"
+    },
+    {
+        "Type":  "feature",
+        "Page":  "market",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-feature-market-2026-05-28.png"
+    },
+    {
+        "Type":  "feature",
+        "Page":  "challenge",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-feature-challenge-2026-05-28.png"
+    },
+    {
+        "Type":  "feature",
+        "Page":  "guild",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-feature-guild-2026-05-28.png"
+    },
+    {
+        "Type":  "feature",
+        "Page":  "system",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-feature-system-2026-05-28.png"
+    },
+    {
+        "Type":  "nav",
+        "Page":  "home",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-nav-post-home-2026-05-28.png",
+        "X":  37,
+        "Y":  735
+    },
+    {
+        "Type":  "nav",
+        "Page":  "role",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-nav-post-role-2026-05-28.png",
+        "X":  97,
+        "Y":  735
+    },
+    {
+        "Type":  "nav",
+        "Page":  "packs",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-nav-post-packs-2026-05-28.png",
+        "X":  156,
+        "Y":  735
+    },
+    {
+        "Type":  "nav",
+        "Page":  "market",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-nav-post-market-2026-05-28.png",
+        "X":  216,
+        "Y":  735
+    },
+    {
+        "Type":  "nav",
+        "Page":  "challenge",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-nav-post-challenge-2026-05-28.png",
+        "X":  276,
+        "Y":  735
+    },
+    {
+        "Type":  "nav",
+        "Page":  "guild",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-nav-post-guild-2026-05-28.png",
+        "X":  335,
+        "Y":  735
+    },
+    {
+        "Type":  "nav",
+        "Page":  "system",
+        "File":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\production\\qa\\evidence\\rc3-visible-smoke-2026-05-28\\rc3-nav-post-system-2026-05-28.png",
+        "X":  395,
+        "Y":  735
+    }
+]

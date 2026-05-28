@@ -4,15 +4,15 @@
 **Workflow Context**: Release Remediation Sprint 001 / RR-011 RC Smoke Execution  
 **CCGS Workflows**: `smoke-check`, `test-evidence-review`, `release-checklist` adaptation  
 **Package Class**: Release Candidate package candidate  
-**Verdict**: PARTIAL PASS - AUTOMATED ARCHIVE SMOKE ONLY  
+**Verdict**: PASS WITH WARNINGS  
 
 ---
 
 ## Scope
 
-This smoke pass validates the source-provenanced `v0.1.0-rc.3` archive attachment and automated boot path.
+This smoke pass validates the source-provenanced `v0.1.0-rc.3` archive attachment, automated boot path, visible-window feature pages, bottom-navigation click-through, and restricted-workflow player-visible review.
 
-It does not yet satisfy the full RC smoke standard because fresh visible-window feature-page screenshots and bottom-navigation click-through evidence have not been rerun from the RC archive.
+It is still not a clean public release approval because soak/performance/memory execution, `rcedit` metadata stamping, store/legal/distribution, localization, crash reporting, rollback, support, and owner sign-offs remain open.
 
 ---
 
@@ -70,6 +70,7 @@ Extracted contents:
 npm.cmd run check
 Expand-Archive -LiteralPath release-archives\brave-legend-v0.1.0-rc.3-windows-internal.zip -DestinationPath tmp\rc-smoke-v0.1.0-rc.3-20260528 -Force
 tmp\rc-smoke-v0.1.0-rc.3-20260528\BraveLegend.exe --headless --quit-after 3 -- --api-base=https://lucky-pack-api-production.up.railway.app
+powershell.exe -ExecutionPolicy Bypass -File tmp\rc3-visible-smoke.ps1
 ```
 
 ---
@@ -84,9 +85,9 @@ tmp\rc-smoke-v0.1.0-rc.3-20260528\BraveLegend.exe --headless --quit-after 3 -- -
 | Export provenance | PASS | `production/releases/build-provenance-v0.1.0-rc.3.md`. |
 | Artifact checksum | PASS | Archive attachment digest and local SHA256 match. |
 | Boot stability | PASS WITH NOTE | Extracted `BraveLegend.exe` exited 0 under headless `--quit-after 3`; Godot logged inability to open `user://logs/...`, but process did not fail. |
-| Feature-page visibility | NOT RERUN | Must be captured from the RC archive before clean RC pass. |
-| Navigation regression | NOT RERUN | Bottom-navigation click-through must be rerun from the RC archive. |
-| Restricted workflow exposure | NOT RERUN | Existing player-visible review exists for the prior Windows export, but it cannot be copied forward as full RC evidence. |
+| Feature-page visibility | PASS WITH NOTES | `production/qa/evidence/rc3-feature-page-visible-qa-2026-05-28.md`; seven accepted 432x768 RC archive screenshots. |
+| Navigation regression | PASS | `production/qa/evidence/rc3-bottom-nav-clickthrough-qa-2026-05-28.md`; seven accepted `rc3-nav-post-*` screenshots. |
+| Restricted workflow exposure | PASS WITH NOTES | `production/qa/evidence/rc3-restricted-workflow-player-visible-review-2026-05-28.md`; no player-visible withdrawal, tax, payout, disbursement, admin/operator center, or operator-settlement workflow found. |
 | Known issues review | PASS WITH WARNINGS | See `production/releases/known-issues-0.1.0-internal.md`. |
 | Open bug threshold | PASS | No `production/qa/bugs/` directory exists; no open S1/S2 bug files found. |
 
@@ -94,18 +95,18 @@ tmp\rc-smoke-v0.1.0-rc.3-20260528\BraveLegend.exe --headless --quit-after 3 -- -
 
 ## Known Warnings
 
-1. Full visible-window RC smoke is still pending.
-2. Bottom-navigation click-through from the RC archive is still pending.
-3. Restricted-workflow player-visible review must be rerun or explicitly accepted for the RC archive.
-4. Godot export still has a missing `rcedit` metadata-stamping warning.
-5. The draft release URL uses GitHub's draft `untagged-*` URL while remaining associated with tag `v0.1.0-rc.3`.
+1. Godot export still has a missing `rcedit` metadata-stamping warning.
+2. The draft release URL uses GitHub's draft `untagged-*` URL while remaining associated with tag `v0.1.0-rc.3`.
+3. Soak/performance/memory execution evidence is still pending.
+4. Store/legal/distribution, localization, crash reporting, rollback, support, and on-call owner decisions remain pending.
+5. This is still a draft prerelease for internal validation, not a public launch.
 
 ---
 
 ## Verdict
 
-**Automated archive smoke**: PASS.
+**RC package smoke**: PASS WITH WARNINGS.
 
-**Full RC smoke standard**: INCOMPLETE.
+This RC candidate is source-tagged, remote-CI backed, archived, attached to a draft prerelease, automated-boot verified, visually checked at 432x768, bottom-navigation checked, and restricted-workflow reviewed from the archive.
 
-This RC candidate is now source-tagged, remote-CI backed, archived, attached to a draft prerelease, and automated-boot verified. It is not yet a clean RC pass until visible UI, navigation, and restricted-workflow checks are rerun from the RC archive.
+It remains internal-only until the open warning-level release readiness gaps are accepted or resolved.

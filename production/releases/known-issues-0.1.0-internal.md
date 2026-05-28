@@ -22,7 +22,7 @@ No open S1/S2 bug tracker files were found in the workspace during RC smoke prep
 
 | ID | Severity | Status | Owner | Notes |
 | --- | --- | --- | --- | --- |
-| KI-001 | Warning | Open | Release Manager + QA Lead | Full visible-window RC smoke from the archive has not been run yet. |
+| KI-001 | Warning | Closed | Release Manager + QA Lead | Full visible-window, bottom-navigation, and restricted-workflow RC smoke from the archive passed with notes on 2026-05-28. Evidence: `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md`. |
 | KI-002 | Warning | Open | Release Manager + Technical Director | Godot 4.4 export completed with missing `rcedit` warning, so Windows file/product metadata stamping is not clean. |
 | KI-003 | Warning | Open | QA Lead | Soak/performance/memory execution evidence is still pending. |
 | KI-004 | Warning | Open | Producer + Operations Owner | Crash reporting, rollback, support intake, and on-call decisions remain pending for clean release. |
@@ -33,4 +33,4 @@ No open S1/S2 bug tracker files were found in the workspace during RC smoke prep
 
 ## Verdict
 
-No open S1/S2 bug files are present, but clean release remains blocked by warning-level release readiness gaps that require owner acceptance or execution evidence.
+No open S1/S2 bug files are present, and RC3 archive smoke now passes with warnings. Clean release remains blocked by the remaining warning-level release readiness gaps that require owner acceptance or execution evidence.

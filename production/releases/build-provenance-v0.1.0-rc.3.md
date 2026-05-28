@@ -3,7 +3,7 @@
 **Date**: 2026-05-28  
 **Workflow Context**: Release Remediation Sprint 001 / First Godot 4.4 Package Candidate  
 **Owners**: Release Manager, Technical Director, QA Lead  
-**Status**: SOURCE TAG, REMOTE CI, DRAFT RELEASE ATTACHMENT, AND AUTOMATED ARCHIVE SMOKE PASS; FULL VISUAL RC SMOKE PENDING  
+**Status**: SOURCE TAG, REMOTE CI, DRAFT RELEASE ATTACHMENT, AND RC ARCHIVE SMOKE PASS WITH WARNINGS  
 
 ---
 
@@ -11,7 +11,7 @@
 
 Record the first Windows package candidate built with the accepted Godot 4.4 tooling path.
 
-This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provenance but no Godot 4.4 package. It is still not a clean public release because only the automated archive smoke has run; fresh visible-window, navigation, and restricted-workflow checks from the RC archive are still pending.
+This is a meaningful improvement over `v0.1.0-rc.2`, which had source/CI provenance but no Godot 4.4 package. It is still not a clean public release because warning-level release readiness gaps remain: `rcedit` metadata stamping, soak/performance/memory execution, store/legal/distribution, localization, crash reporting, rollback, support, on-call, and owner sign-offs.
 
 ---
 
@@ -128,6 +128,9 @@ The attachment is stored on a draft prerelease for internal validation only and 
 | Headless boot smoke | PASS | `BraveLegend.exe --headless --quit-after 3` exited 0 |
 | Project gate | PASS | `npm.cmd run check` passed with 47 tests |
 | Archive extraction smoke | PASS WITH NOTE | `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md`; Godot logged a user log path warning but exited 0 |
+| Feature-page visible RC smoke | PASS WITH NOTES | `production/qa/evidence/rc3-feature-page-visible-qa-2026-05-28.md`; seven accepted 432x768 screenshots from the archive. |
+| Bottom-navigation RC click-through | PASS | `production/qa/evidence/rc3-bottom-nav-clickthrough-qa-2026-05-28.md`; seven accepted `rc3-nav-post-*` screenshots. |
+| Restricted-workflow player-visible review | PASS WITH NOTES | `production/qa/evidence/rc3-restricted-workflow-player-visible-review-2026-05-28.md`; no restricted finance/operator workflow exposure found. |
 
 ---
 
@@ -146,11 +149,11 @@ The second warning means file/product version string stamping is not yet clean. 
 
 **Local Godot 4.4 package candidate**: PASS WITH WARNINGS.
 
-**Source-provenanced clean RC**: PARTIAL: source tag, CI, draft release attachment, and automated archive smoke pass; full visual/navigation RC smoke pending.
+**Source-provenanced RC package smoke**: PASS WITH WARNINGS.
 
-Remaining blockers before this can become an accepted clean RC:
+Remaining blockers before clean release readiness:
 
 1. Resolve or accept the `rcedit` metadata stamping warning.
-2. Run the visible-window and navigation portions of the RC smoke standard against the archive.
-3. Re-run the restricted-workflow player-visible review from the RC archive or record owner acceptance of the prior evidence gap.
-4. Re-run the release gate after full RC smoke evidence exists.
+2. Execute soak/performance/memory profiling and record evidence.
+3. Close store/legal/distribution, localization, crash reporting, rollback, support, and on-call owner decisions.
+4. Re-run the release gate after the warning-level gaps are accepted or resolved.

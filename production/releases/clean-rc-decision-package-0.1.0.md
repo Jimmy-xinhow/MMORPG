@@ -4,7 +4,7 @@
 **Workflow Context**: Release Remediation Sprint 001 / Clean RC Package Preconditions  
 **CCGS Workflows**: `architecture-decision`, `release-checklist`, `gate-check` adaptation  
 **Owners**: Producer, Technical Director, Release Manager, QA Lead  
-**Status**: Recommended decisions applied for source policy; clean package execution pending  
+**Status**: Recommended decisions applied for source policy; RC3 package smoke passed with warnings  
 
 ---
 
@@ -218,11 +218,11 @@ After this source-policy application, the next implementation stage is:
 
 1. Provision accepted Godot 4.4 tooling. **Complete with warnings**: see `production/releases/godot-4.4-tooling-provisioning-2026-05-28.md`.
 2. Align clean RC artifact naming in validators, package docs, smoke standard, and future provenance. **Complete for source-provenance scope**: `BraveLegend.exe` package candidate exists and source tag is pushed.
-3. Rebuild a clean RC package from the accepted tag. **Partial**: current archive was built before tag push but the tag points to the same CI-passing source commit; post-tag archive re-verification remains pending.
+3. Rebuild a clean RC package from the accepted tag. **Complete for RC3 provenance**: current archive was built from the same CI-passing source commit as the tag, checksum recorded, attached to a draft prerelease, extracted, boot-smoked, and visually smoke-tested.
 4. Create and checksum the release archive. **Complete and attached to draft prerelease**: see `production/releases/build-provenance-v0.1.0-rc.3.md`.
 5. Push a successor tag, expected `v0.1.0-rc.3`. **Complete**.
-6. Run remote CI and local RC smoke. **Complete for source commit and local boot smoke; full RC smoke standard pending**.
-7. Update build provenance and release gate report. **Build provenance updated; release gate re-run pending**.
+6. Run remote CI and local RC smoke. **Complete with warnings**: source commit CI passed; archive boot, feature-page, bottom-navigation, and restricted-workflow smoke passed with remaining release-readiness warnings.
+7. Update build provenance and release gate report. **Build provenance updated; release gate re-run pending after remaining warning-level gaps are accepted or resolved**.
 
 ---
 
@@ -239,7 +239,7 @@ This decision package is ready for owner review when:
 - [x] Approved source-policy decisions are applied in source.
 - [x] Accepted Godot 4.4 tooling is provisioned.
 - [x] Clean RC artifact naming is applied to generated package evidence.
-- [ ] Clean RC archive is attached to a GitHub prerelease and validated through the full RC smoke standard.
+- [x] Clean RC archive is attached to a GitHub prerelease and validated through the RC package smoke standard.
 
 ---
 
@@ -247,4 +247,4 @@ This decision package is ready for owner review when:
 
 **Decision readiness**: APPLIED FOR SOURCE POLICY.
 
-**Clean RC package readiness**: PARTIAL SOURCE-PROVENANCED CANDIDATE. Blocked until full visible/navigation RC smoke evidence, restricted-workflow RC review, and release gate re-check are complete.
+**Clean RC package readiness**: PASS WITH WARNINGS for internal RC package validation. Clean release remains blocked until `rcedit`, soak/performance/memory, store/legal/distribution, localization, crash/support/rollback/on-call, owner sign-offs, and release gate re-check are complete.
