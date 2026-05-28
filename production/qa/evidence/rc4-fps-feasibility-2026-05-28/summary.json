@@ -1,0 +1,13 @@
+﻿{
+    "generated_at":  "2026-05-28T12:24:57.4135748+08:00",
+    "command":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\tools\\godot-4.4\\Godot_v4.4-stable_win64_console.exe --path C:\\tmp\\mmorpg-rc4\\godot-client --windowed --resolution 432x768 --print-fps --quit-after 3600 -- --api-base=https://lucky-pack-api-production.up.railway.app",
+    "project":  "C:\\tmp\\mmorpg-rc4\\godot-client",
+    "duration_seconds":  63.39,
+    "exit_code":  0,
+    "fps_sample_count":  58,
+    "fps_min":  59,
+    "fps_max":  60,
+    "fps_average":  59.98,
+    "frame_time_ms_average_from_fps":  16.67,
+    "limitation":  "Godot editor/runtime source-project FPS feasibility pass from clean RC4 worktree; not packaged executable FPS telemetry and not human soak."
+}

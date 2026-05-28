@@ -89,7 +89,7 @@ The current store/legal checklist keeps public PC, Steam, Apple App Store, and G
 | RR-003 | Resolve Godot version strategy | Review | Godot 4.4 tooling is provisioned; `v0.1.0-rc.4` source tag, remote CI, and internal metadata-warning closure pass. |
 | RR-004 | Define release artifact policy | Review | RC archive/checksum, source tag, draft GitHub Release attachment, RC3 full visual smoke, and RC4 metadata-warning closure evidence exist. |
 | RR-005 | Create release QA plan for remediation evidence | Review | QA plan artifact exists and sprint status metadata is reconciled; awaiting QA Lead sign-off. |
-| RR-006 | Produce performance, soak, and memory profiling protocol | Review | Planning complete; RC4 automated pilot complete; full 2-hour human soak still required. |
+| RR-006 | Produce performance, soak, and memory profiling protocol | Review | Planning complete; RC4 automated pilot and short FPS/frame-time feasibility pass complete; full 2-hour human soak still required. |
 | RR-007 | Produce localization gap report | Review | Planning complete; owner decisions required. |
 | RR-008 | Draft launch operations package | Review | Planning complete; owner decisions required. |
 | RR-009 | Draft store/legal/distribution checklist | Review | Planning complete; owner/legal decisions required. |
@@ -186,6 +186,7 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Sprint QA plan | Review | `production/qa/qa-plan-sprint-release-remediation-001.md` |
 | Performance/soak protocol | Protocol only | `production/qa/performance-soak-memory-protocol-2026-05-27.md` |
 | Performance/memory pilot | Pass with limitations; not a substitute for full soak | `production/qa/evidence/performance-memory-pilot-rc4-2026-05-28.md` |
+| FPS/frame-time feasibility | Pass with limitations; Godot 4.4 runtime source-project evidence, not packaged executable telemetry | `production/qa/evidence/fps-frame-time-feasibility-rc4-2026-05-28.md` |
 | Localization gap report | Review | `production/localization/localization-gap-report-2026-05-27.md` |
 | Launch operations package | Review | `production/releases/launch-operations-package-0.1.0.md` |
 | Store/legal/distribution checklist | Review | `production/releases/store-legal-distribution-checklist-0.1.0.md` |
@@ -229,7 +230,7 @@ Rationale:
 | 3 | Get QA Lead and Release Manager acceptance for RR-011 release candidate smoke standard. | QA Lead + Release Manager | Next owner review |
 | 4 | Get QA Lead and Creative Director review for RR-012 playtest templates. | QA Lead + Creative Director | Next owner review |
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
-| 6 | Run real 2-hour human soak and FPS/frame-time observation. | QA Lead + Performance Analyst | Before release gate re-run |
+| 6 | Run real 2-hour human soak and either capture packaged executable FPS/frame-time telemetry or accept the Godot 4.4 runtime FPS limitation. | QA Lead + Performance Analyst | Before release gate re-run |
 | 7 | Decide public Windows metadata/signing path: configure metadata stamping/signing for public launch or keep public distribution deferred. | Release Manager + Technical Director + Legal / Policy Owner | Before clean public release sign-off |
 | 8 | Re-run release gate after owner decisions and remaining execution evidence are updated. | Release Manager + QA Lead | After warning-level gaps are resolved or explicitly accepted |
 

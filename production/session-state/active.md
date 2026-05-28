@@ -572,3 +572,13 @@
   - `production/qa/evidence/performance-summary-2026-05-28.md`
   - raw JSON under `production/qa/evidence/rc4-performance-memory-pilot-2026-05-28/`
 - Gate impact: pilot passes with limitations, but it does not close RR-006. Full 2-hour human-observed soak, FPS/frame-time evidence or accepted tooling limitation, QA Lead sign-off, and Performance Analyst sign-off remain pending.
+
+## Session Extract - RC4 FPS/frame-time feasibility 2026-05-28
+- Workflow: CCGS `perf-profile` plus `soak-test` adaptation.
+- Scope: short Godot 4.4 runtime source-project FPS feasibility pass from clean RC4 worktree, not packaged executable telemetry and not human soak.
+- Command: `tools\godot-4.4\Godot_v4.4-stable_win64_console.exe --path C:\tmp\mmorpg-rc4\godot-client --windowed --resolution 432x768 --print-fps --quit-after 3600 -- --api-base=https://lucky-pack-api-production.up.railway.app`
+- Result: exit code 0, 58 FPS samples, minimum 59 FPS, maximum 60 FPS, average 59.98 FPS, derived average frame time 16.67 ms.
+- Evidence:
+  - `production/qa/evidence/fps-frame-time-feasibility-rc4-2026-05-28.md`
+  - raw logs under `production/qa/evidence/rc4-fps-feasibility-2026-05-28/`
+- Gate impact: this improves RR-006 FPS/frame-time evidence but does not close RR-006. Full 2-hour human-observed soak, packaged executable FPS telemetry or explicit owner limitation acceptance, QA Lead sign-off, and Performance Analyst sign-off remain pending.

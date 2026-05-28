@@ -24,7 +24,7 @@ No open S1/S2 bug tracker files were found in the workspace during RC smoke prep
 | --- | --- | --- | --- | --- |
 | KI-001 | Warning | Closed | Release Manager + QA Lead | Full visible-window, bottom-navigation, and restricted-workflow RC smoke from the archive passed with notes on 2026-05-28. Evidence: `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md`. |
 | KI-002 | Warning | Closed | Release Manager + Technical Director | Internal RC `rcedit` warning closed in `v0.1.0-rc.4` by disabling Godot Windows metadata stamping. Evidence: `production/releases/windows-metadata-stamping-decision-2026-05-28.md` and `production/qa/evidence/rc-smoke-v0.1.0-rc.4.md`. |
-| KI-003 | Warning | Open | QA Lead + Performance Analyst | Automated RC4 boot timing and 10-minute memory pilot passed with limitations; full 2-hour human-observed soak, FPS/frame-time evidence, and owner sign-offs remain pending. |
+| KI-003 | Warning | Open | QA Lead + Performance Analyst | Automated RC4 boot timing, 10-minute memory pilot, and short Godot 4.4 FPS/frame-time feasibility pass completed with limitations; full 2-hour human-observed soak, packaged executable FPS acceptance, and owner sign-offs remain pending. |
 | KI-004 | Warning | Open | Producer + Operations Owner | Crash reporting, rollback, support intake, and on-call decisions remain pending for clean release. |
 | KI-005 | Warning | Open | Legal / Policy Owner | Store/legal/distribution package remains checklist-only and is not accepted for public launch. |
 | KI-006 | Warning | Open | Localization Owner | Localization readiness remains blocked by string table, font, text-in-image, string freeze, and localization QA decisions. |
