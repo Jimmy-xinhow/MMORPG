@@ -201,7 +201,7 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | RC smoke standard | Defined / review | `production/qa/release-candidate-smoke-standard-0.1.0.md` |
 | Playtest templates | Defined / review | `production/playtests/RR-012-template-index.md` |
 | Patch notes/changelog requirements | Defined / review | `production/releases/patch-notes-changelog-requirements-0.1.0.md` |
-| Release gate re-check | FAIL | `production/gate-checks/gate-check-release-2026-05-28.md` |
+| Release gate re-check | FAIL; updated after RC4 FPS evidence | `production/gate-checks/gate-check-release-2026-05-28-rc4-fps.md` |
 
 ---
 
@@ -232,7 +232,7 @@ Rationale:
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
 | 6 | Run real 2-hour human soak and either capture packaged executable FPS/frame-time telemetry or accept the Godot 4.4 runtime FPS limitation. | QA Lead + Performance Analyst | Before release gate re-run |
 | 7 | Decide public Windows metadata/signing path: configure metadata stamping/signing for public launch or keep public distribution deferred. | Release Manager + Technical Director + Legal / Policy Owner | Before clean public release sign-off |
-| 8 | Re-run release gate after owner decisions and remaining execution evidence are updated. | Release Manager + QA Lead | After warning-level gaps are resolved or explicitly accepted |
+| 8 | Re-run release checklist or launch checklist after owner decisions and remaining execution evidence are updated, then rerun release gate. | Release Manager + QA Lead | After warning-level gaps are resolved or explicitly accepted |
 
 ---
 

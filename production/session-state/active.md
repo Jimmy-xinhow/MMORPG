@@ -582,3 +582,10 @@
   - `production/qa/evidence/fps-frame-time-feasibility-rc4-2026-05-28.md`
   - raw logs under `production/qa/evidence/rc4-fps-feasibility-2026-05-28/`
 - Gate impact: this improves RR-006 FPS/frame-time evidence but does not close RR-006. Full 2-hour human-observed soak, packaged executable FPS telemetry or explicit owner limitation acceptance, QA Lead sign-off, and Performance Analyst sign-off remain pending.
+
+## Session Extract - Release gate re-check after RC4 FPS evidence 2026-05-28
+- Workflow: CCGS `gate-check release` adapted for Codex.
+- Artifact written: `production/gate-checks/gate-check-release-2026-05-28-rc4-fps.md`
+- Verdict: FAIL for clean Release; Internal Windows test remains GO WITH WARNINGS if owners accept internal-only constraints.
+- Resolved or improved since prior gate: ADR-0002 accepted, Godot 4.4 RC4 export evidence exists, RC4 archive/checksum and draft release attachment exist, internal `rcedit` metadata-warning track is closed, and short FPS/frame-time feasibility evidence exists.
+- Remaining blockers: full 2-hour human-observed soak, packaged executable FPS telemetry or explicit limitation acceptance, RR-006 owner sign-off, store/legal/distribution approval, operations/crash/rollback/support/on-call acceptance, localization scope decision, public Windows metadata/signing decision, real playtest execution evidence, and updated release/launch checklist before the next gate attempt.
