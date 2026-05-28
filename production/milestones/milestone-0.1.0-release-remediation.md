@@ -86,15 +86,15 @@ The current store/legal checklist keeps public PC, Steam, Apple App Store, and G
 | --- | --- | --- | --- |
 | RR-001 | Establish source-control provenance plan | Review | Required decision artifact. |
 | RR-002 | Capture remote CI evidence path | Review | Remote CI evidence is captured; QA Lead sign-off remains. |
-| RR-003 | Resolve Godot version strategy | Review | Godot 4.4 tooling is provisioned; `v0.1.0-rc.3` source tag, remote CI, and RC archive smoke pass with warnings. |
-| RR-004 | Define release artifact policy | Review | Local RC archive/checksum, source tag, draft GitHub Release attachment, and full RC archive smoke evidence exist. |
+| RR-003 | Resolve Godot version strategy | Review | Godot 4.4 tooling is provisioned; `v0.1.0-rc.4` source tag, remote CI, and internal metadata-warning closure pass. |
+| RR-004 | Define release artifact policy | Review | RC archive/checksum, source tag, draft GitHub Release attachment, RC3 full visual smoke, and RC4 metadata-warning closure evidence exist. |
 | RR-005 | Create release QA plan for remediation evidence | Review | QA plan artifact exists and sprint status metadata is reconciled; awaiting QA Lead sign-off. |
 | RR-006 | Produce performance, soak, and memory profiling protocol | Review | Planning complete; execution still required. |
 | RR-007 | Produce localization gap report | Review | Planning complete; owner decisions required. |
 | RR-008 | Draft launch operations package | Review | Planning complete; owner decisions required. |
 | RR-009 | Draft store/legal/distribution checklist | Review | Planning complete; owner/legal decisions required. |
 | RR-010 | Create milestone plan | In progress for this artifact | This file. |
-| RR-011 | Define release candidate smoke standard | Review | Standard defined; RC3 archive boot, feature-page, bottom-navigation, and restricted-workflow smoke passed with warnings. |
+| RR-011 | Define release candidate smoke standard | Review | Standard defined; RC3 full visual smoke passed and RC4 metadata-warning closure passed with warnings. |
 | RR-012 | Prepare three playtest report templates | Review | Templates exist for new player experience, mid-game systems, and difficulty curve; real sessions still required before clean release evidence. |
 | RR-013 | Draft patch notes and changelog requirements | Review | Requirements defined; actual changelog and patch notes remain blocked until source control and changelog sources exist. |
 
@@ -192,7 +192,9 @@ Internal Windows test can remain GO WITH WARNINGS when:
 | Build provenance | Source/CI pass; clean RC not ready | `production/releases/build-provenance-v0.1.0-rc.2.md` |
 | Clean RC decision package | Local RC candidate produced; source tag/release attachment pending | `production/releases/clean-rc-decision-package-0.1.0.md` |
 | RC3 package candidate | Source tag, remote CI, draft release attachment, and RC archive smoke pass with warnings | `production/releases/build-provenance-v0.1.0-rc.3.md` |
+| RC4 package candidate | Source tag, remote CI, draft release attachment, and internal metadata-warning closure pass | `production/releases/build-provenance-v0.1.0-rc.4.md` |
 | RC3 smoke evidence | Pass with warnings: archive boot, feature-page, bottom-navigation, and restricted-workflow checks complete | `production/qa/evidence/rc-smoke-v0.1.0-rc.3.md` |
+| RC4 smoke evidence | Pass with warnings: clean-worktree export, metadata-warning closure, archive boot smoke complete | `production/qa/evidence/rc-smoke-v0.1.0-rc.4.md` |
 | Known issues | Draft / no open S1-S2 bug files | `production/releases/known-issues-0.1.0-internal.md` |
 | RC smoke standard | Defined / review | `production/qa/release-candidate-smoke-standard-0.1.0.md` |
 | Playtest templates | Defined / review | `production/playtests/RR-012-template-index.md` |
@@ -227,7 +229,7 @@ Rationale:
 | 4 | Get QA Lead and Creative Director review for RR-012 playtest templates. | QA Lead + Creative Director | Next owner review |
 | 5 | Get Producer and Release Manager review for RR-013 patch notes/changelog requirements. | Producer + Release Manager | Next owner review |
 | 6 | Run real soak/performance/memory execution. | QA Lead + Performance Analyst | Before release gate re-run |
-| 7 | Decide the `rcedit` metadata-stamping warning: configure `rcedit`, disable metadata modification, or accept for internal-only RC. | Release Manager + Technical Director | Before clean RC sign-off |
+| 7 | Decide public Windows metadata/signing path: configure metadata stamping/signing for public launch or keep public distribution deferred. | Release Manager + Technical Director + Legal / Policy Owner | Before clean public release sign-off |
 | 8 | Re-run release gate after owner decisions and remaining execution evidence are updated. | Release Manager + QA Lead | After warning-level gaps are resolved or explicitly accepted |
 
 ---

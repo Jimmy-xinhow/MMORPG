@@ -4,7 +4,7 @@
 **Workflow Context**: Release Remediation Sprint 001 / Clean RC Package Preconditions  
 **CCGS Workflows**: `architecture-decision`, `release-checklist`, `gate-check` adaptation  
 **Owners**: Producer, Technical Director, Release Manager, QA Lead  
-**Status**: Recommended decisions applied for source policy; RC3 package smoke passed with warnings  
+**Status**: Recommended decisions applied for source policy; RC4 internal metadata-warning closure passed  
 
 ---
 
@@ -221,8 +221,8 @@ After this source-policy application, the next implementation stage is:
 3. Rebuild a clean RC package from the accepted tag. **Complete for RC3 provenance**: current archive was built from the same CI-passing source commit as the tag, checksum recorded, attached to a draft prerelease, extracted, boot-smoked, and visually smoke-tested.
 4. Create and checksum the release archive. **Complete and attached to draft prerelease**: see `production/releases/build-provenance-v0.1.0-rc.3.md`.
 5. Push a successor tag, expected `v0.1.0-rc.3`. **Complete**.
-6. Run remote CI and local RC smoke. **Complete with warnings**: source commit CI passed; archive boot, feature-page, bottom-navigation, and restricted-workflow smoke passed with remaining release-readiness warnings.
-7. Update build provenance and release gate report. **Build provenance updated; release gate re-run pending after remaining warning-level gaps are accepted or resolved**.
+6. Run remote CI and local RC smoke. **Complete with warnings**: RC3 archive boot, feature-page, bottom-navigation, and restricted-workflow smoke passed; RC4 closes the internal `rcedit` warning with a clean-worktree archive boot smoke.
+7. Update build provenance and release gate report. **Build provenance updated through RC4; release gate re-run pending after remaining warning-level gaps are accepted or resolved**.
 
 ---
 
@@ -247,4 +247,4 @@ This decision package is ready for owner review when:
 
 **Decision readiness**: APPLIED FOR SOURCE POLICY.
 
-**Clean RC package readiness**: PASS WITH WARNINGS for internal RC package validation. Clean release remains blocked until `rcedit`, soak/performance/memory, store/legal/distribution, localization, crash/support/rollback/on-call, owner sign-offs, and release gate re-check are complete.
+**Clean RC package readiness**: PASS WITH WARNINGS for internal RC package validation. Internal `rcedit` warning is closed by RC4. Clean release remains blocked until soak/performance/memory, store/legal/distribution, localization, crash/support/rollback/on-call, public metadata/signing, owner sign-offs, and release gate re-check are complete.

@@ -528,3 +528,26 @@
   - `production/sprint-status.yaml`
   - `production/milestones/milestone-0.1.0-release-remediation.md`
 - Remaining clean release blockers: `rcedit` metadata decision, soak/performance/memory execution, store/legal/distribution, localization, crash reporting, rollback, support/on-call, owner sign-offs, and release gate re-check.
+
+## Session Extract - RC4 internal metadata-stamping warning closure 2026-05-28
+- Workflow: CCGS Godot export workflow plus release artifact policy / smoke-check adaptation.
+- Source change: `godot-client/export_presets.cfg` changed `application/modify_resources=false` to disable Godot Windows resource metadata stamping for internal RC exports.
+- Commit pushed: `9528dcaaef37bc6e48cb1c35bd7cb71ff41a294b` (`Disable internal Windows metadata stamping`).
+- Remote GitHub Actions run passed: `https://github.com/Jimmy-xinhow/MMORPG/actions/runs/26551524332`.
+- Tag pushed: `v0.1.0-rc.4`.
+- Clean worktree used for artifact build: `C:\tmp\mmorpg-rc4`, detached at commit `9528dca`; this avoided the primary workspace's unrelated dirty UI/asset changes.
+- Godot 4.4 export passed from the clean worktree with no `rcedit` warning.
+- Draft prerelease created: `https://github.com/Jimmy-xinhow/MMORPG/releases/tag/untagged-96711e61e29cb79b5637`.
+- Attachment uploaded: `brave-legend-v0.1.0-rc.4-windows-internal.zip`.
+- GitHub attachment digest: `sha256:fc7b40d6a37b52896fec4989e253e8485845798308f98d640f21795abe9ffbab`.
+- Archive extracted to `tmp/rc-smoke-v0.1.0-rc.4-20260528/`; archive boot smoke passed with exit code 0.
+- Evidence written:
+  - `production/releases/windows-metadata-stamping-decision-2026-05-28.md`
+  - `production/releases/build-provenance-v0.1.0-rc.4.md`
+  - `production/qa/evidence/rc-smoke-v0.1.0-rc.4.md`
+- Updated artifacts:
+  - `production/releases/known-issues-0.1.0-internal.md`
+  - `production/releases/clean-rc-decision-package-0.1.0.md`
+  - `production/sprint-status.yaml`
+  - `production/milestones/milestone-0.1.0-release-remediation.md`
+- Remaining clean release blockers: soak/performance/memory execution, store/legal/distribution, localization, crash reporting, rollback, support/on-call, public metadata/signing path, owner sign-offs, and release gate re-check.
