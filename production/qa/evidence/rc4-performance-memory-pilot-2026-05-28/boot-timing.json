@@ -1,0 +1,27 @@
+﻿[
+    {
+        "Run":  1,
+        "ExitCode":  0,
+        "ElapsedMs":  2077
+    },
+    {
+        "Run":  2,
+        "ExitCode":  0,
+        "ElapsedMs":  2034
+    },
+    {
+        "Run":  3,
+        "ExitCode":  0,
+        "ElapsedMs":  2020
+    },
+    {
+        "Run":  4,
+        "ExitCode":  0,
+        "ElapsedMs":  2040
+    },
+    {
+        "Run":  5,
+        "ExitCode":  0,
+        "ElapsedMs":  2036
+    }
+]

@@ -69,8 +69,8 @@ stories:
     status: review
     owner: "Performance Analyst + QA Lead"
     estimate_days: 1.25
-    blocker: "Awaiting QA Lead and Performance Analyst sign-off plus real soak execution"
-    completed: "Protocol created at production/qa/performance-soak-memory-protocol-2026-05-27.md"
+    blocker: "Automated RC4 boot timing and 10-minute memory pilot passed with limitations; awaiting full 2-hour human soak, FPS/frame-time evidence, QA Lead sign-off, and Performance Analyst sign-off"
+    completed: "Protocol created at production/qa/performance-soak-memory-protocol-2026-05-27.md; pilot evidence created at production/qa/evidence/performance-memory-pilot-rc4-2026-05-28.md"
   - id: "RR-007"
     name: "Produce localization gap report"
     file: "production/sprints/sprint-release-remediation-001.md"

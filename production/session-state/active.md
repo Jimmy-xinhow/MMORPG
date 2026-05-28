@@ -551,3 +551,24 @@
   - `production/sprint-status.yaml`
   - `production/milestones/milestone-0.1.0-release-remediation.md`
 - Remaining clean release blockers: soak/performance/memory execution, store/legal/distribution, localization, crash reporting, rollback, support/on-call, public metadata/signing path, owner sign-offs, and release gate re-check.
+
+## Session Extract - RC4 performance/memory pilot 2026-05-28
+- Workflow: CCGS `perf-profile` + `soak-test` adaptation.
+- Build tested: extracted `v0.1.0-rc.4` Windows archive at `tmp/rc-smoke-v0.1.0-rc.4-20260528/BraveLegend.exe`.
+- Temporary automation: `tmp/rc4-perf-memory-pilot.ps1`.
+- Pilot scope:
+  - 5 headless boot timing runs.
+  - 10-minute visible-window runtime.
+  - Bottom-navigation cycling every 10 seconds.
+  - CPU, working set, private memory, and paged memory samples every 2 minutes.
+- Results:
+  - Boot timing: 5/5 exit code 0; average 2041 ms.
+  - Working set: 161,234,944 B to 188,448,768 B (+16.88%).
+  - Private memory: 350,605,312 B to 387,010,560 B (+10.38%).
+  - Last three memory samples plateaued; no short-run runaway pattern observed.
+  - FPS/frame-time was not measured.
+- Evidence written:
+  - `production/qa/evidence/performance-memory-pilot-rc4-2026-05-28.md`
+  - `production/qa/evidence/performance-summary-2026-05-28.md`
+  - raw JSON under `production/qa/evidence/rc4-performance-memory-pilot-2026-05-28/`
+- Gate impact: pilot passes with limitations, but it does not close RR-006. Full 2-hour human-observed soak, FPS/frame-time evidence or accepted tooling limitation, QA Lead sign-off, and Performance Analyst sign-off remain pending.

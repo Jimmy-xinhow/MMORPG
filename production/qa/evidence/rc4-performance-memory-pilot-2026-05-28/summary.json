@@ -1,0 +1,16 @@
+﻿{
+    "ExePath":  "C:\\Users\\User\\幸運禮包MMORPG遊戲\\tmp\\rc-smoke-v0.1.0-rc.4-20260528\\BraveLegend.exe",
+    "ApiBase":  "https://lucky-pack-api-production.up.railway.app",
+    "DurationSeconds":  600,
+    "SampleIntervalSeconds":  120,
+    "NavigationIntervalSeconds":  10,
+    "BootRuns":  5,
+    "BootFailures":  0,
+    "MemorySamples":  5,
+    "StartWorkingSetBytes":  161234944,
+    "EndWorkingSetBytes":  188448768,
+    "WorkingSetDeltaBytes":  27213824,
+    "StartPrivateMemoryBytes":  350605312,
+    "EndPrivateMemoryBytes":  387010560,
+    "PrivateMemoryDeltaBytes":  36405248
+}

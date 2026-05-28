@@ -1,0 +1,52 @@
+﻿[
+    {
+        "ElapsedSeconds":  0,
+        "Timestamp":  "2026-05-28T11:24:18.5748408+08:00",
+        "ProcessId":  41700,
+        "HasExited":  false,
+        "CPUSeconds":  1.953,
+        "WorkingSetBytes":  161234944,
+        "PrivateMemoryBytes":  350605312,
+        "PagedMemoryBytes":  350605312
+    },
+    {
+        "ElapsedSeconds":  124,
+        "Timestamp":  "2026-05-28T11:26:22.2034266+08:00",
+        "ProcessId":  41700,
+        "HasExited":  false,
+        "CPUSeconds":  10.062,
+        "WorkingSetBytes":  183926784,
+        "PrivateMemoryBytes":  378966016,
+        "PagedMemoryBytes":  378966016
+    },
+    {
+        "ElapsedSeconds":  247,
+        "Timestamp":  "2026-05-28T11:28:25.9226407+08:00",
+        "ProcessId":  41700,
+        "HasExited":  false,
+        "CPUSeconds":  18.375,
+        "WorkingSetBytes":  188436480,
+        "PrivateMemoryBytes":  387629056,
+        "PagedMemoryBytes":  387629056
+    },
+    {
+        "ElapsedSeconds":  361,
+        "Timestamp":  "2026-05-28T11:30:19.1567535+08:00",
+        "ProcessId":  41700,
+        "HasExited":  false,
+        "CPUSeconds":  25.812,
+        "WorkingSetBytes":  188514304,
+        "PrivateMemoryBytes":  387637248,
+        "PagedMemoryBytes":  387637248
+    },
+    {
+        "ElapsedSeconds":  484,
+        "Timestamp":  "2026-05-28T11:32:22.5541032+08:00",
+        "ProcessId":  41700,
+        "HasExited":  false,
+        "CPUSeconds":  33.875,
+        "WorkingSetBytes":  188448768,
+        "PrivateMemoryBytes":  387010560,
+        "PagedMemoryBytes":  387010560
+    }
+]
